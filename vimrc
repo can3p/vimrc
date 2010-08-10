@@ -77,4 +77,4 @@ map <F8> :emenu Encoding.<TAB>
 
 set statusline=%<%f%h%m%r%=%b\ \ 0x%B\ \ %l,%c%V\ %P
 
-let g:wokmarks_do_maps = 2
+let g:wokmarks_do_maps=1
