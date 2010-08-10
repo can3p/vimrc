@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/dpetroff/code/python/fetch_imdb'
-let g:netrw_dirhist_2='/home/dpetroff/work/etotebe/php/dp_etotebe/application/modules/admin/views/scripts/index'
-let g:netrw_dirhist_3='/home/dpetroff/code/python/fileshare/frontend/wsgi'
-let g:netrw_dirhist_4='/home/dpetroff/.vim'
