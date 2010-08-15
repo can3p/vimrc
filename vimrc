@@ -2,6 +2,8 @@ set noerrorbells
 set visualbell
 set t_vb=
 
+set foldmethod=indent
+
 set shiftwidth=4
 set ts=4
 set sw=4
