@@ -89,3 +89,19 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" simple indenting function: converts every 4 spaces to tabs, and removes
+" unnecessary spaces
+fun ClearIndent()
+	try
+		%s/    /\t/g
+	catch
+	endtry
+	try
+		%s/\s\+$//g
+	catch
+	endtry
+	try
+		%s/^\s\+$//g
+	catch
+	endtry
+endfun
