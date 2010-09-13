@@ -1,0 +1,4 @@
+Configuration files fo vim editors. You can clone this repo and make symbolic links (.vimrc --> vimrc, .vim --> this dir)
+to use it.
+
+Tabs are used for indentation by default.
