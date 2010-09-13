@@ -1,3 +1,4 @@
+"disable window flashing
 set noerrorbells
 set visualbell
 set t_vb=
@@ -24,15 +25,19 @@ filetype indent on
 set undolevels=100
 set ttyfast
 let mapleader = ","
-"let loaded_netrw = 1
 set guioptions-=T
 set guioptions-=r
 set guioptions-=m
 syntax enable
 
+"show tabs
+set list!
+set listchars=tab:>-
+
+
 set tabstop=4
-set softtabstop=4 
-set shiftwidth=4 
+set softtabstop=4
+set shiftwidth=4
 set noexpandtab
 set backspace=indent,eol,start
 
@@ -56,25 +61,17 @@ nmap <F5> :bp!<CR>
 imap <F1> <Esc>:set<Space>nu!<CR>a
 nmap <F1> :set<Space>nu!<CR>
 
-"imap <Tab> <C-N>
-
-"let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplMapCTabSwitchBuffs = 1
-"let g:miniBufExplModSelTarget = 1
-
 set encoding=utf-8
 set termencoding=utf-8
 
-"map <F8> :execute RotateEnc()<CR>
 map <F7> :let &fileencoding=&encoding<CR>
 
-set wildmenu 
-set wcm=<Tab> 
-menu Encoding.koi8-r :e ++enc=koi8-r<CR> 
-menu Encoding.windows-1251 :e ++enc=cp1251<CR> 
-menu Encoding.ibm-866 :e ++enc=ibm866<CR> 
-menu Encoding.utf-8 :e ++enc=utf-8<CR> 
+set wildmenu
+set wcm=<Tab>
+menu Encoding.koi8-r :e ++enc=koi8-r<CR>
+menu Encoding.windows-1251 :e ++enc=cp1251<CR>
+menu Encoding.ibm-866 :e ++enc=ibm866<CR>
+menu Encoding.utf-8 :e ++enc=utf-8<CR>
 map <F8> :emenu Encoding.<TAB>
 
 set statusline=%<%f%h%m%r%=%b\ \ 0x%B\ \ %l,%c%V\ %P
@@ -83,3 +80,12 @@ let g:wokmarks_do_maps=1
 
 "actionscript syntax hl
 autocmd BufRead *.as set filetype=actionscript
+
+"highlight unnecessary spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
