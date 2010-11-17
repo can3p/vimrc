@@ -140,3 +140,6 @@ let vala_no_tab_space_error = 1
 
 " Minimum lines used for comment syncing (default 50)
 "let vala_minlines = 120
+
+"replace selected text
+vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
