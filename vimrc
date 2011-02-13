@@ -39,7 +39,8 @@ set listchars=tab:>-
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab
+"set noexpandtab
+set expandtab
 set backspace=indent,eol,start
 
 " список буферов
@@ -78,6 +79,7 @@ map <F8> :emenu Encoding.<TAB>
 set statusline=%<%f%h%m%r%=%b\ \ 0x%B\ \ %l,%c%V\ %P
 
 let g:wokmarks_do_maps=1
+let loaded_netrw = 1 "fuck netrw
 
 "actionscript syntax hl
 autocmd BufRead *.as set filetype=actionscript
