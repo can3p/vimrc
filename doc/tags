@@ -212,7 +212,9 @@ command-t-usage	command-t.txt	/*command-t-usage*
 command-t-website	command-t.txt	/*command-t-website*
 command-t-wildignore	command-t.txt	/*command-t-wildignore*
 command-t.txt	command-t.txt	/*command-t.txt*
+cs	surround.txt	/*cs*
 cvscommand-changes	vcscommand.txt	/*cvscommand-changes*
+ds	surround.txt	/*ds*
 g:CommandTAcceptSelectionMap	command-t.txt	/*g:CommandTAcceptSelectionMap*
 g:CommandTAcceptSelectionSplitMap	command-t.txt	/*g:CommandTAcceptSelectionSplitMap*
 g:CommandTAcceptSelectionTabMap	command-t.txt	/*g:CommandTAcceptSelectionTabMap*
@@ -263,6 +265,8 @@ g:vimwiki_use_calendar	vimwiki.txt	/*g:vimwiki_use_calendar*
 g:vimwiki_use_mouse	vimwiki.txt	/*g:vimwiki_use_mouse*
 g:vimwiki_valid_html_tags	vimwiki.txt	/*g:vimwiki_valid_html_tags*
 g:vimwiki_w32_dir_enc	vimwiki.txt	/*g:vimwiki_w32_dir_enc*
+i_CTRL-G_S	surround.txt	/*i_CTRL-G_S*
+i_CTRL-G_s	surround.txt	/*i_CTRL-G_s*
 ps_color.txt	ps_color.txt	/*ps_color.txt*
 ps_colour	ps_color.txt	/*ps_colour*
 psc	ps_color.txt	/*psc*
@@ -299,6 +303,14 @@ showmarks-contents	showmarks.txt	/*showmarks-contents*
 showmarks-highlighting	showmarks.txt	/*showmarks-highlighting*
 showmarks-mappings	showmarks.txt	/*showmarks-mappings*
 showmarks.txt	showmarks.txt	/*showmarks.txt*
+surround	surround.txt	/*surround*
+surround-author	surround.txt	/*surround-author*
+surround-customizing	surround.txt	/*surround-customizing*
+surround-issues	surround.txt	/*surround-issues*
+surround-mappings	surround.txt	/*surround-mappings*
+surround-replacements	surround.txt	/*surround-replacements*
+surround-targets	surround.txt	/*surround-targets*
+surround.txt	surround.txt	/*surround.txt*
 taglist-commands	taglist.txt	/*taglist-commands*
 taglist-debug	taglist.txt	/*taglist-debug*
 taglist-extend	taglist.txt	/*taglist-extend*
@@ -315,6 +327,7 @@ taglist-session	taglist.txt	/*taglist-session*
 taglist-todo	taglist.txt	/*taglist-todo*
 taglist-using	taglist.txt	/*taglist-using*
 taglist.txt	taglist.txt	/*taglist.txt*
+vS	surround.txt	/*vS*
 v_<C-Y>,	zencoding.txt	/*v_<C-Y>,*
 vcscommand	vcscommand.txt	/*vcscommand*
 vcscommand-buffer-management	vcscommand.txt	/*vcscommand-buffer-management*
@@ -339,6 +352,7 @@ vcscommand-ssh-other	vcscommand.txt	/*vcscommand-ssh-other*
 vcscommand-ssh-wrapper	vcscommand.txt	/*vcscommand-ssh-wrapper*
 vcscommand-statusline	vcscommand.txt	/*vcscommand-statusline*
 vcscommand.txt	vcscommand.txt	/*vcscommand.txt*
+vgS	surround.txt	/*vgS*
 vimwiki	vimwiki.txt	/*vimwiki*
 vimwiki-calendar	vimwiki.txt	/*vimwiki-calendar*
 vimwiki-changelog	vimwiki.txt	/*vimwiki-changelog*
@@ -415,11 +429,16 @@ vimwiki_i_<S-CR>	vimwiki.txt	/*vimwiki_i_<S-CR>*
 vimwiki_i_<Tab>	vimwiki.txt	/*vimwiki_i_<Tab>*
 viwmiki-global-options	vimwiki.txt	/*viwmiki-global-options*
 viwmiki-local-options	vimwiki.txt	/*viwmiki-local-options*
+vs	surround.txt	/*vs*
 xml-plugin-callbacks	xml-plugin.txt	/*xml-plugin-callbacks*
 xml-plugin-html	xml-plugin.txt	/*xml-plugin-html*
 xml-plugin-mappings	xml-plugin.txt	/*xml-plugin-mappings*
 xml-plugin-settings	xml-plugin.txt	/*xml-plugin-settings*
 xml-plugin.txt	xml-plugin.txt	/*xml-plugin.txt*
+yS	surround.txt	/*yS*
+ySS	surround.txt	/*ySS*
+ys	surround.txt	/*ys*
+yss	surround.txt	/*yss*
 zencoding	zencoding.txt	/*zencoding*
 zencoding-balance-tag-inward	zencoding.txt	/*zencoding-balance-tag-inward*
 zencoding-balance-tag-outward	zencoding.txt	/*zencoding-balance-tag-outward*
