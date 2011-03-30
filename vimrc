@@ -1,3 +1,4 @@
+call pathogen#runtime_append_all_bundles()
 "disable window flashing
 set noerrorbells
 set visualbell
@@ -104,6 +105,9 @@ nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
+imap <C-o> <c-m><esc>O<tab>
+nmap <C-o> i<c-m><esc>O<tab>
+
 
 " simple indenting function: converts every 4 spaces to tabs, and removes
 " unnecessary spaces
@@ -145,3 +149,10 @@ let vala_no_tab_space_error = 1
 
 "replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
+autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+autocmd BufNewFile,BufRead *Cakefile set filetype=coffee
+
+let g:user_zen_settings = {
+    \ 'indentation' : '    '
+    \ }
+
