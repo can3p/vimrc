@@ -1,5 +1,4 @@
 *.swp
-.git
 logs
 public/photos
 public/phtmp
