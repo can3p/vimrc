@@ -1,5 +1,5 @@
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
+" call pathogen#runtime_append_all_bundles()
 
 
 "disable window flashing
@@ -139,6 +139,7 @@ let g:user_zen_settings = {
 set runtimepath+=~/.vim/vundle.git/
 call vundle#rc()
 
+filetype off
 Bundle "https://github.com/thinca/vim-quickrun.git"
 
 "Programming
@@ -168,5 +169,5 @@ Bundle "http://github.com/gmarik/vim-visual-star-search.git"
 
 "Visual
 Bundle "https://github.com/tpope/vim-vividchalk.git"
-
+filetype plugin indent on
 
