@@ -1,4 +1,7 @@
+call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+
+
 "disable window flashing
 set noerrorbells
 set visualbell
@@ -44,23 +47,18 @@ set shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
 
-" список буферов
+" Tabs
+nnoremap <silent> <LocalLeader>[ :tabprev<CR>
+nnoremap <silent> <LocalLeader>] :tabnext<CR>
+
+" Buffers
+nnoremap <silent> <LocalLeader>- :bd<CR>
+
+" Buffer list
 imap <S-F4> <Esc>:buffers<CR>
 nmap <S-F4> :buffers<CR>
 
-" закрыть буфер
-imap <C-F4> <Esc>:bd<CR>a
-nmap <C-F4> :bd<CR>
-
-" следующий буфер
-imap <F6> <Esc>:bn!<CR>a
-nmap <F6> :bn!<CR>
-
-" предыдущий буфер
-imap <F5> <Esc>:bp!<CR>a
-nmap <F5> :bp!<CR>
-
-" вкл/выкл отображения номеров строк
+" Toggle line numbers
 imap <F1> <Esc>:set<Space>nu!<CR>a
 nmap <F1> :set<Space>nu!<CR>
 
@@ -108,24 +106,6 @@ vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 imap <C-o> <c-m><esc>O<tab>
 nmap <C-o> i<c-m><esc>O<tab>
 
-
-" simple indenting function: converts every 4 spaces to tabs, and removes
-" unnecessary spaces
-fun ClearIndent()
-	try
-		%s/    /\t/g
-	catch
-	endtry
-	try
-		%s/\s\+$//g
-	catch
-	endtry
-	try
-		%s/^\s\+$//g
-	catch
-	endtry
-endfun
-
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 au BufRead,BufNewFile *.vala            setfiletype vala
@@ -155,4 +135,37 @@ autocmd BufNewFile,BufRead *Cakefile set filetype=coffee
 let g:user_zen_settings = {
     \ 'indentation' : '    '
     \ }
+
+set runtimepath+=~/.vim/vundle.git/
+call vundle#rc()
+
+Bundle "https://github.com/thinca/vim-quickrun.git"
+
+"Programming
+Bundle "jQuery"
+Bundle "https://github.com/mattn/zencoding-vim.git"
+Bundle "https://github.com/vim-scripts/jsbeautify.git"
+Bundle "https://github.com/kchmck/vim-coffee-script.git"
+
+Bundle "Markdown"
+
+Bundle "repeat.vim"
+Bundle "surround.vim"
+Bundle "https://github.com/vim-scripts/wokmarks.vim.git"
+
+" tComment
+Bundle "tComment"
+nnoremap // :TComment<CR>
+vnoremap // :TComment<CR>
+
+" Command-T
+Bundle "git://git.wincent.com/command-t.git"
+let g:CommandTMatchWindowAtTop=1 " show window at top
+
+" Navigation
+Bundle "http://github.com/gmarik/vim-visual-star-search.git"
+
+"Visual
+Bundle "https://github.com/tpope/vim-vividchalk.git"
+
 
