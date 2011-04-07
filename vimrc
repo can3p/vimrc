@@ -20,7 +20,7 @@ set langmap=Ж:,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,
 set langmap=ё`йqцwуeкrеtнyгuшiщoзpх[ъ]фaыsвdаfпgрhоjлkдlж\\;э'яzчxсcмvиbтnьmб\\,ю.Ё~ЙQЦWУEКRЕTНYГUШIЩOЗPХ{Ъ}ФAЫSВDАFПGРHОJЛKДLЖ:Э\\"ЯZЧXСCМVИBТNЬMЮ>Б<
 set nowrap
 set autoindent
-colorscheme dusk
+colorscheme solarized
 set sidescroll=5
 set sidescrolloff=5
 set showmatch " проверка скобок
@@ -47,16 +47,21 @@ set shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
 
-" Tabs
-nnoremap <silent> <LocalLeader>[ :tabprev<CR>
-nnoremap <silent> <LocalLeader>] :tabnext<CR>
-
-" Buffers
-nnoremap <silent> <LocalLeader>- :bd<CR>
-
 " Buffer list
 imap <S-F4> <Esc>:buffers<CR>
 nmap <S-F4> :buffers<CR>
+
+" close buffer
+imap <C-F4> <Esc>:bd<CR>a
+nmap <C-F4> :bd<CR>
+
+" next buffer
+imap <F6> <Esc>:bn!<CR>a
+nmap <F6> :bn!<CR>
+
+" previous buffer
+imap <F5> <Esc>:bp!<CR>a
+nmap <F5> :bp!<CR>
 
 " Toggle line numbers
 imap <F1> <Esc>:set<Space>nu!<CR>a
@@ -169,5 +174,6 @@ Bundle "http://github.com/gmarik/vim-visual-star-search.git"
 
 "Visual
 Bundle "https://github.com/tpope/vim-vividchalk.git"
+Bundle "https://github.com/altercation/vim-colors-solarized.git"
 filetype plugin indent on
 
