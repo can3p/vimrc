@@ -16,11 +16,10 @@ set sw=4
 set smartcase
 set ignorecase
 set incsearch
-set langmap=Ж:,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,э',яz,чx,сc,мv,иb,тn,ьm,б\,,ю.,ё`
+" set langmap=Ж:,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,э',яz,чx,сc,мv,иb,тn,ьm,б\,,ю.,ё`
 set langmap=ё`йqцwуeкrеtнyгuшiщoзpх[ъ]фaыsвdаfпgрhоjлkдlж\\;э'яzчxсcмvиbтnьmб\\,ю.Ё~ЙQЦWУEКRЕTНYГUШIЩOЗPХ{Ъ}ФAЫSВDАFПGРHОJЛKДLЖ:Э\\"ЯZЧXСCМVИBТNЬMЮ>Б<
 set nowrap
 set autoindent
-colorscheme solarized
 set sidescroll=5
 set sidescrolloff=5
 set showmatch " проверка скобок
@@ -169,11 +168,17 @@ vnoremap // :TComment<CR>
 Bundle "git://git.wincent.com/command-t.git"
 let g:CommandTMatchWindowAtTop=1 " show window at top
 
+" Coffee script
+autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
+
 " Navigation
 Bundle "http://github.com/gmarik/vim-visual-star-search.git"
 
 "Visual
 Bundle "https://github.com/tpope/vim-vividchalk.git"
 Bundle "https://github.com/altercation/vim-colors-solarized.git"
+Bundle "https://github.com/skammer/vim-css-color.git"
 filetype plugin indent on
 
+set background=dark
+colorscheme darkslategray
