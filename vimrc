@@ -152,6 +152,7 @@ Bundle "https://github.com/mattn/zencoding-vim.git"
 Bundle "https://github.com/vim-scripts/jsbeautify.git"
 Bundle "https://github.com/kchmck/vim-coffee-script.git"
 Bundle "https://github.com/msanders/snipmate.vim"
+Bundle "https://github.com/tpope/vim-haml.git"
 
 Bundle "Markdown"
 
