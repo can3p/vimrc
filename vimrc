@@ -179,6 +179,10 @@ Bundle "http://github.com/gmarik/vim-visual-star-search.git"
 Bundle "https://github.com/tpope/vim-vividchalk.git"
 Bundle "https://github.com/altercation/vim-colors-solarized.git"
 Bundle "https://github.com/skammer/vim-css-color.git"
+
+"Misc
+Bundle "https://github.com/jceb/vim-orgmode.git"
+
 filetype plugin indent on
 
 set background=dark
