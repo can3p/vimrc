@@ -152,9 +152,15 @@ Bundle "https://github.com/mattn/zencoding-vim.git"
 Bundle "https://github.com/vim-scripts/jsbeautify.git"
 Bundle "https://github.com/kchmck/vim-coffee-script.git"
 Bundle "https://github.com/msanders/snipmate.vim"
+
 Bundle "https://github.com/tpope/vim-haml.git"
 
+Bundle "https://github.com/digitaltoad/vim-jade.git"
+
 Bundle "Markdown"
+Bundle "jshint.vim"
+Bundle "css.vim"
+Bundle "Better-CSS-Syntax-for-Vim"
 
 Bundle "repeat.vim"
 Bundle "surround.vim"
@@ -170,7 +176,8 @@ Bundle "git://git.wincent.com/command-t.git"
 let g:CommandTMatchWindowAtTop=1 " show window at top
 
 " Coffee script
-autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
+" uncomment to compile file on every save action
+" autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 
 " Navigation
 Bundle "http://github.com/gmarik/vim-visual-star-search.git"
@@ -178,7 +185,6 @@ Bundle "http://github.com/gmarik/vim-visual-star-search.git"
 "Visual
 Bundle "https://github.com/tpope/vim-vividchalk.git"
 Bundle "https://github.com/altercation/vim-colors-solarized.git"
-Bundle "https://github.com/skammer/vim-css-color.git"
 
 "Misc
 Bundle "https://github.com/jceb/vim-orgmode.git"
@@ -187,3 +193,5 @@ filetype plugin indent on
 
 set background=dark
 colorscheme darkslategray
+
+au BufRead,BufNewFile *.bml set filetype=perl
