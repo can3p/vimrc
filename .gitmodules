@@ -1,0 +1,66 @@
+[submodule "bundle/Better-CSS-Syntax-for-Vim"]
+	path = bundle/Better-CSS-Syntax-for-Vim
+	url = https://github.com/vim-scripts/Better-CSS-Syntax-for-Vim.git
+[submodule "vundle.git"]
+	path = vundle.git
+	url = http://github.com/gmarik/vundle.git
+[submodule "bundle/zencoding-vim"]
+	path = bundle/zencoding-vim
+	url = https://github.com/mattn/zencoding-vim.git
+[submodule "bundle/wokmarks.vim"]
+	path = bundle/wokmarks.vim
+	url = https://github.com/vim-scripts/wokmarks.vim.git
+[submodule "bundle/vim-vividchalk"]
+	path = bundle/vim-vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
+[submodule "bundle/vim-visual-star-search"]
+	path = bundle/vim-visual-star-search
+	url = http://github.com/gmarik/vim-visual-star-search.git
+[submodule "bundle/vim-quickrun"]
+	path = bundle/vim-quickrun
+	url = https://github.com/thinca/vim-quickrun.git
+[submodule "bundle/vim-orgmode"]
+	path = bundle/vim-orgmode
+	url = https://github.com/jceb/vim-orgmode.git
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "bundle/vim-haml"]
+	path = bundle/vim-haml
+	url = https://github.com/tpope/vim-haml.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/tComment"]
+	path = bundle/tComment
+	url = https://github.com/vim-scripts/tComment.git
+[submodule "bundle/surround.vim"]
+	path = bundle/surround.vim
+	url = https://github.com/vim-scripts/surround.vim.git
+[submodule "bundle/snipmate.vim"]
+	path = bundle/snipmate.vim
+	url = https://github.com/msanders/snipmate.vim
+[submodule "bundle/repeat.vim"]
+	path = bundle/repeat.vim
+	url = https://github.com/vim-scripts/repeat.vim.git
+[submodule "bundle/Markdown"]
+	path = bundle/Markdown
+	url = https://github.com/vim-scripts/Markdown.git
+[submodule "bundle/jshint.vim"]
+	path = bundle/jshint.vim
+	url = https://github.com/vim-scripts/jshint.vim.git
+[submodule "bundle/jsbeautify"]
+	path = bundle/jsbeautify
+	url = https://github.com/vim-scripts/jsbeautify.git
+[submodule "bundle/jQuery"]
+	path = bundle/jQuery
+	url = https://github.com/vim-scripts/jQuery.git
+[submodule "bundle/css.vim"]
+	path = bundle/css.vim
+	url = https://github.com/vim-scripts/css.vim.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
