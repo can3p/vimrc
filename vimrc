@@ -239,8 +239,16 @@ Bundle "nanotech/jellybeans.vim"
 Bundle "altercation/vim-colors-solarized.git"
 
 "Misc
+Bundle "L9"
+Bundle "FuzzyFinder"
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-speeddating"
+Bundle "DataWraith/auto_mkdir"
 Bundle "jceb/vim-orgmode"
 Bundle "carlosedp/TabBar"
+Bundle "Lokaltog/vim-easymotion"
+" indent code properly
+Bundle "sickill/vim-pasta"
 
 filetype plugin indent on
 
