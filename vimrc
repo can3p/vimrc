@@ -165,11 +165,10 @@ nnoremap <S-l> <C-w>>
 "replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
-set runtimepath+=~/.vim/bundle/vundle/
+set runtimepath+=~/.vim/vundle/
 call vundle#rc()
 
 filetype off
-Bundle 'gmarik/vundle'
 let g:vundle_default_git_proto = 'git' " use https for githubrepos
 
 "Languages and libraries support
