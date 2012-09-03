@@ -146,7 +146,7 @@ nmap <M-j> :bn!<CR>
 nmap <M-k> :bp!<CR>
 nmap <leader>j :bn!<CR>
 nmap <leader>k :bp!<CR>
-nmap <leader>- :Kwdb<CR>
+nmap <leader>- :Kwbd<CR>
 nmap <leader>e :TagExplorer<CR>
 
 " Smart way to move btw. windows
