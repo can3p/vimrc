@@ -116,8 +116,7 @@ if has('gui_running')
     set guioptions=cMg "console dialogs, do not show menu or toolbar
 
     if has('mac')
-        set guifont=Andale\ Mono\ 12
-        set noantialias
+        set guifont=Andale\ Mono\:h13
     else
         set guifont=DejaVu\ Sans\ Mono\ 10
     endif
