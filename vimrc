@@ -155,11 +155,11 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Maps Alt-[h,j,k,l] to resizing a window split
-nnoremap <S-h> <C-w><
-nnoremap <S-j> <C-W>+
-nnoremap <S-k> <C-W>-
-nnoremap <S-l> <C-w>>
+" Maps Ctrl-Shift-[h,j,k,l] to resizing a window split
+nnoremap <C-S-h> <C-w><
+nnoremap <C-S-j> <C-W>+
+nnoremap <C-S-k> <C-W>-
+nnoremap <C-S-l> <C-w>>
 
 "replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
