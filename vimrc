@@ -245,6 +245,30 @@ Bundle "tpope/vim-speeddating"
 Bundle "DataWraith/auto_mkdir"
 Bundle "jceb/vim-orgmode"
 Bundle "carlosedp/TabBar"
+
+" tabbar fix for mac
+if has('mac')
+  nmap <D-1> <M-1>
+  nmap <D-2> <M-2>
+  nmap <D-3> <M-3>
+  nmap <D-4> <M-4>
+  nmap <D-5> <M-5>
+  nmap <D-6> <M-6>
+  nmap <D-7> <M-7>
+  nmap <D-8> <M-8>
+  nmap <D-9> <M-9>
+
+  imap <D-1> <M-1>
+  imap <D-2> <M-2>
+  imap <D-3> <M-3>
+  imap <D-4> <M-4>
+  imap <D-5> <M-5>
+  imap <D-6> <M-6>
+  imap <D-7> <M-7>
+  imap <D-8> <M-8>
+  imap <D-9> <M-9>
+endif
+
 Bundle "Lokaltog/vim-easymotion"
 " indent code properly
 Bundle "sickill/vim-pasta"
