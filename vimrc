@@ -186,7 +186,6 @@ Bundle "Markdown"
 Bundle "edsono/vim-matchit"
 
 " CSS
-Bundle "css.vim"
 Bundle "Better-CSS-Syntax-for-Vim"
 Bundle "skammer/vim-css-color"
 let g:cssColorVimDoNotMessMyUpdatetime = 1
