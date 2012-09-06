@@ -116,8 +116,7 @@ if has('gui_running')
     set guioptions=cMg "console dialogs, do not show menu or toolbar
 
     if has('mac')
-        set guifont=Andale\ Mono\ 12
-        set noantialias
+        set guifont=Andale\ Mono\:h13
     else
         set guifont=DejaVu\ Sans\ Mono\ 10
     endif
@@ -147,7 +146,7 @@ nmap <M-j> :bn!<CR>
 nmap <M-k> :bp!<CR>
 nmap <leader>j :bn!<CR>
 nmap <leader>k :bp!<CR>
-nmap <leader>- :Kwdb<CR>
+nmap <leader>- :Kwbd<CR>
 nmap <leader>e :TagExplorer<CR>
 
 " Smart way to move btw. windows
@@ -156,11 +155,11 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Maps Alt-[h,j,k,l] to resizing a window split
-nnoremap <S-h> <C-w><
-nnoremap <S-j> <C-W>+
-nnoremap <S-k> <C-W>-
-nnoremap <S-l> <C-w>>
+" Maps Ctrl-Shift-[h,j,k,l] to resizing a window split
+nnoremap <C-S-h> <C-w><
+nnoremap <C-S-j> <C-W>+
+nnoremap <C-S-k> <C-W>-
+nnoremap <C-S-l> <C-w>>
 
 "replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
@@ -245,6 +244,30 @@ Bundle "tpope/vim-speeddating"
 Bundle "DataWraith/auto_mkdir"
 Bundle "jceb/vim-orgmode"
 Bundle "carlosedp/TabBar"
+
+" tabbar fix for mac
+if has('mac')
+  nmap <D-1> <M-1>
+  nmap <D-2> <M-2>
+  nmap <D-3> <M-3>
+  nmap <D-4> <M-4>
+  nmap <D-5> <M-5>
+  nmap <D-6> <M-6>
+  nmap <D-7> <M-7>
+  nmap <D-8> <M-8>
+  nmap <D-9> <M-9>
+
+  imap <D-1> <M-1>
+  imap <D-2> <M-2>
+  imap <D-3> <M-3>
+  imap <D-4> <M-4>
+  imap <D-5> <M-5>
+  imap <D-6> <M-6>
+  imap <D-7> <M-7>
+  imap <D-8> <M-8>
+  imap <D-9> <M-9>
+endif
+
 Bundle "Lokaltog/vim-easymotion"
 " indent code properly
 Bundle "sickill/vim-pasta"
