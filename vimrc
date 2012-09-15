@@ -142,24 +142,24 @@ let vala_no_tab_space_error = 1
 " ========
 
 " buffer movement
-nmap <M-j> :bn!<CR>
-nmap <M-k> :bp!<CR>
-nmap <leader>j :bn!<CR>
-nmap <leader>k :bp!<CR>
+nmap <M-k> :bn!<CR>
+nmap <M-j> :bp!<CR>
+nmap <leader>k :bn!<CR>
+nmap <leader>j :bp!<CR>
 nmap <leader>- :Kwbd<CR>
 nmap <leader>e :TagExplorer<CR>
 
 " Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+"map <C-j> <C-W>j
+"map <C-k> <C-W>k
+"map <C-h> <C-W>h
+"map <C-l> <C-W>l
 
-" Maps Ctrl-Shift-[h,j,k,l] to resizing a window split
-nnoremap <C-S-h> <C-w><
-nnoremap <C-S-j> <C-W>+
-nnoremap <C-S-k> <C-W>-
-nnoremap <C-S-l> <C-w>>
+" Maps Ctrl-[h,j,k,l] to resizing a window split
+nnoremap <C-h> <C-w><
+nnoremap <C-j> <C-W>+
+nnoremap <C-k> <C-W>-
+nnoremap <C-l> <C-w>>
 
 "replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
