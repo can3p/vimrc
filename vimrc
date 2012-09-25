@@ -244,6 +244,8 @@ Bundle "tpope/vim-speeddating"
 Bundle "DataWraith/auto_mkdir"
 Bundle "jceb/vim-orgmode"
 Bundle "carlosedp/TabBar"
+" configs per directory
+Bundle "embear/vim-localvimrc"
 
 " tabbar fix for mac
 if has('mac')
