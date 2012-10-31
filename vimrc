@@ -221,6 +221,12 @@ Bundle "repeat.vim"
 Bundle "surround.vim"
 
 Bundle "scrooloose/nerdcommenter"
+" highlight indent levels
+Bundle "nathanaelkane/vim-indent-guides"
+
+if has('gui_running')
+  let g:indent_guides_enable_on_vim_startup=1
+endif
 
 " Command-T
 Bundle "git://git.wincent.com/command-t.git"
