@@ -252,6 +252,10 @@ Bundle "jceb/vim-orgmode"
 Bundle "carlosedp/TabBar"
 " configs per directory
 Bundle "embear/vim-localvimrc"
+"grep integration
+"without this option plugin fails on Max OS X
+let g:Grep_Xargs_Options = '-0'
+Bundle "grep.vim"
 
 " tabbar fix for mac
 if has('mac')
