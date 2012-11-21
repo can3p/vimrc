@@ -116,7 +116,7 @@ if has('gui_running')
     set guioptions=cMg "console dialogs, do not show menu or toolbar
 
     if has('mac')
-        set guifont=Andale\ Mono\:h13
+        set guifont=Andale\ Mono\:h17
     else
         set guifont=DejaVu\ Sans\ Mono\ 10
     endif
@@ -189,6 +189,7 @@ Bundle "Better-CSS-Syntax-for-Vim"
 Bundle "skammer/vim-css-color"
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 Bundle "groenewege/vim-less"
+Bundle "wavded/vim-stylus"
 
 " Javascript
 Bundle "jQuery"
