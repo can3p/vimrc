@@ -257,6 +257,7 @@ Bundle "embear/vim-localvimrc"
 "without this option plugin fails on Max OS X
 let g:Grep_Xargs_Options = '-0'
 Bundle "grep.vim"
+Bundle "can3p/incbool.vim"
 
 " tabbar fix for mac
 if has('mac')
