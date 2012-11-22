@@ -164,6 +164,9 @@ nnoremap <C-l> <C-w>>
 "replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 set runtimepath+=~/.vim/vundle/
 call vundle#rc()
 
