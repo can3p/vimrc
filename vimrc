@@ -233,8 +233,8 @@ if has('gui_running')
 endif
 
 " Command-T
-Bundle "git://git.wincent.com/command-t.git"
-let g:CommandTMatchWindowAtTop=1 " show window at top
+"Bundle "git://git.wincent.com/command-t.git"
+"let g:CommandTMatchWindowAtTop=1 " show window at top
 
 " Navigation
 Bundle "gmarik/vim-visual-star-search.git"
@@ -248,7 +248,11 @@ Bundle "altercation/vim-colors-solarized.git"
 
 "Misc
 Bundle "L9"
-Bundle "FuzzyFinder"
+Bundle "kien/ctrlp.vim"
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_cmd = 'CtrlPBuffer'
+"Bundle "FuzzyFinder"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-speeddating"
 Bundle "DataWraith/auto_mkdir"
