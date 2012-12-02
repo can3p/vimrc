@@ -265,6 +265,10 @@ Bundle "embear/vim-localvimrc"
 let g:Grep_Xargs_Options = '-0'
 Bundle "grep.vim"
 Bundle "can3p/incbool.vim"
+"align lines (on equal signs) easily with <Leader>t=
+Bundle "Align"
+"internal functions to do fs work, Unlink, Move, Chmod, W etc.
+Bundle "tpope/vim-eunuch"
 
 " tabbar fix for mac
 if has('mac')
