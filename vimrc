@@ -67,7 +67,7 @@ set backspace=indent,eol,start
 
 " indent settings
 set autoindent
-set foldmethod=indent
+"set foldmethod=indent
 
 
 " Visual settings
@@ -116,7 +116,7 @@ if has('gui_running')
     set guioptions=cMg "console dialogs, do not show menu or toolbar
 
     if has('mac')
-        set guifont=Andale\ Mono\:h17
+        set guifont=Menlo\:h17
     else
         set guifont=DejaVu\ Sans\ Mono\ 10
     endif
@@ -293,7 +293,12 @@ if has('mac')
   imap <D-9> <M-9>
 endif
 
+"motion helpers
 Bundle "Lokaltog/vim-easymotion"
+Bundle "goldfeld/vim-seek"
+
+Bundle "Shougo/vimproc"
+Bundle "Shougo/vimshell"
 " indent code properly
 Bundle "sickill/vim-pasta"
 
