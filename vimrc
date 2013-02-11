@@ -295,7 +295,6 @@ endif
 
 "motion helpers
 Bundle "Lokaltog/vim-easymotion"
-Bundle "goldfeld/vim-seek"
 
 Bundle "Shougo/vimproc"
 Bundle "Shougo/vimshell"
