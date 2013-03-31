@@ -147,13 +147,8 @@ nmap <M-j> :bp!<CR>
 nmap <leader>k :bn!<CR>
 nmap <leader>j :bp!<CR>
 nmap <leader>- :Kwbd<CR>
-nmap <leader>e :TagExplorer<CR>
-
-" Smart way to move btw. windows
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
+nmap <leader>e :NERDTree<CR>
+nmap + :EasyBufferToggle<CR>
 
 " Maps Ctrl-[h,j,k,l] to resizing a window split
 nnoremap <C-h> <C-w><
@@ -166,6 +161,9 @@ vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" use gg=G to indent html file
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
 set runtimepath+=~/.vim/vundle/
 call vundle#rc()
@@ -196,15 +194,18 @@ Bundle "wavded/vim-stylus"
 
 " Javascript
 Bundle "jQuery"
-Bundle "jsbeautify"
+Bundle "maksimr/vim-jsbeautify"
+map <leader>ffj :call JsBeautify()<cr>
+map <leader>ffh :call HtmlBeautify()<cr>
 Bundle "jshint.vim"
 Bundle "jelera/vim-javascript-syntax"
 
 " Other Languages
 Bundle "kchmck/vim-coffee-script"
+let g:coffeeCheckHighlightErrorLine = 1
+Bundle "othree/coffee-check.vim"
 Bundle "Dart"
 Bundle "rainux/vim-vala"
-Bundle "actionscript.vim--Leider"
 
 " clojure
 Bundle "VimClojure"
@@ -232,13 +233,10 @@ if has('gui_running')
   let g:indent_guides_enable_on_vim_startup=1
 endif
 
-" Command-T
-"Bundle "git://git.wincent.com/command-t.git"
-"let g:CommandTMatchWindowAtTop=1 " show window at top
-
 " Navigation
 Bundle "gmarik/vim-visual-star-search.git"
-Bundle "tagexplorer.vim"
+Bundle "troydm/easybuffer.vim"
+Bundle "scrooloose/nerdtree"
 
 " Visual
 
@@ -252,12 +250,10 @@ Bundle "kien/ctrlp.vim"
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 "let g:ctrlp_cmd = 'CtrlPBuffer'
-"Bundle "FuzzyFinder"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-speeddating"
 Bundle "DataWraith/auto_mkdir"
 Bundle "jceb/vim-orgmode"
-Bundle "carlosedp/TabBar"
 " configs per directory
 Bundle "embear/vim-localvimrc"
 "grep integration
@@ -296,10 +292,29 @@ endif
 "motion helpers
 Bundle "Lokaltog/vim-easymotion"
 
-Bundle "Shougo/vimproc"
-Bundle "Shougo/vimshell"
 " indent code properly
 Bundle "sickill/vim-pasta"
+
+" highlight syntax errors
+Bundle "scrooloose/syntastic"
+
+"yank ring
+Bundle "YankRing.vim"
+
+"run files fast
+let g:quickrun_config = {
+\  'coffee': {
+\    'command': 'coffee',
+\    'cmdopt': '-cbp',
+\    'tempfile': '%{tempname()}.coffee',
+\    'exec': '%c %a %o %s'
+\  },
+\  'coffee/run': {
+\    'command': 'coffee'
+\  }
+\}
+
+Bundle "thinca/vim-quickrun"
 
 filetype plugin indent on
 
