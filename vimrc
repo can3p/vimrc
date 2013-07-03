@@ -298,9 +298,6 @@ Bundle "sickill/vim-pasta"
 " highlight syntax errors
 Bundle "scrooloose/syntastic"
 
-"yank ring
-Bundle "YankRing.vim"
-
 "run files fast
 let g:quickrun_config = {
 \  'coffee': {
