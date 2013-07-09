@@ -312,6 +312,7 @@ let g:quickrun_config = {
 \}
 
 Bundle "thinca/vim-quickrun"
+Bundle "AndrewRadev/gapply.vim"
 
 filetype plugin indent on
 
