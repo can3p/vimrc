@@ -313,6 +313,17 @@ let g:quickrun_config = {
 
 Bundle "thinca/vim-quickrun"
 Bundle "AndrewRadev/gapply.vim"
+Bundle "AndrewRadev/splitjoin.vim"
+
+nmap sj :SplitjoinSplit<cr>
+nmap sk :SplitjoinJoin<cr>
+
+Bundle "AndrewRadev/inline_edit.vim"
+
+let b:inline_edit_autowrite = 1
+Bundle "AndrewRadev/linediff.vim"
+
+Bundle "AndrewRadev/coffee_tools.vim"
 
 filetype plugin indent on
 
