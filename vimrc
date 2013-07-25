@@ -117,6 +117,8 @@ if has('gui_running')
 
     if has('mac')
         set guifont=Menlo\:h17
+    elseif has('win32')
+        set guifont=Consolas:h14:cRUSSIAN
     else
         set guifont=DejaVu\ Sans\ Mono\ 10
     endif
