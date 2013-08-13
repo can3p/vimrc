@@ -148,7 +148,7 @@ nmap <M-k> :bn!<CR>
 nmap <M-j> :bp!<CR>
 nmap <leader>k :bn!<CR>
 nmap <leader>j :bp!<CR>
-nmap <leader>- :Kwbd<CR>
+nmap <leader>- :Bdelete<CR>
 nmap <leader>e :NERDTree<CR>
 nmap + :EasyBufferToggle<CR>
 
@@ -177,7 +177,7 @@ let g:vundle_default_git_proto = 'git' " use https for githubrepos
 
 " HTML/Markup
 Bundle "othree/html5-syntax.vim"
-Bundle "mattn/zencoding-vim"
+Bundle "mattn/emmet-vim"
 let g:user_zen_settings = {
     \ 'indentation' : '    '
     \ }
@@ -252,6 +252,8 @@ Bundle "kien/ctrlp.vim"
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 "let g:ctrlp_cmd = 'CtrlPBuffer'
+" close buffer while leaving windows in place
+Bundle "moll/vim-bbye"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-speeddating"
 Bundle "DataWraith/auto_mkdir"
@@ -261,7 +263,8 @@ Bundle "embear/vim-localvimrc"
 "grep integration
 "without this option plugin fails on Max OS X
 let g:Grep_Xargs_Options = '-0'
-Bundle "grep.vim"
+" trying ack
+Bundle "mileszs/ack.vim"
 Bundle "can3p/incbool.vim"
 "align lines (on equal signs) easily with <Leader>t=
 Bundle "Align"
@@ -327,6 +330,8 @@ Bundle "AndrewRadev/linediff.vim"
 
 Bundle "AndrewRadev/coffee_tools.vim"
 
+Bundle "sollidsnake/vterm"
+
 filetype plugin indent on
 
 if has('gui_running')
@@ -335,3 +340,6 @@ if has('gui_running')
 else
   colorscheme emacs
 endif
+
+" show manuals
+runtime ftplugin/man.vim
