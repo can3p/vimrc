@@ -218,6 +218,9 @@ let g:vimclojure#ParenRainbow = 1
 
 " Utility plugins
 
+" Multi edit sublime like support
+Bundle "terryma/vim-multiple-cursors"
+
 " Easy way to set marks on the page
 Bundle "wokmarks.vim"
 let g:wokmarks_do_maps=1
@@ -331,6 +334,9 @@ Bundle "AndrewRadev/linediff.vim"
 Bundle "AndrewRadev/coffee_tools.vim"
 
 Bundle "sollidsnake/vterm"
+
+" pretty statusbar
+Bundle "bling/vim-airline"
 
 filetype plugin indent on
 
