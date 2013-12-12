@@ -152,12 +152,6 @@ nmap <leader>- :Bdelete<CR>
 nmap <leader>e :NERDTree<CR>
 nmap + :EasyBufferToggle<CR>
 
-" Maps Ctrl-[h,j,k,l] to resizing a window split
-nnoremap <C-h> <C-w><
-nnoremap <C-j> <C-W>+
-nnoremap <C-k> <C-W>-
-nnoremap <C-l> <C-w>>
-
 "replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
