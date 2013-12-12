@@ -183,25 +183,20 @@ Bundle "edsono/vim-matchit"
 
 " CSS
 Bundle "Better-CSS-Syntax-for-Vim"
-Bundle "skammer/vim-css-color"
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 Bundle "groenewege/vim-less"
 Bundle "wavded/vim-stylus"
 
 " Javascript
-Bundle "jQuery"
 Bundle "maksimr/vim-jsbeautify"
 map <leader>ffj :call JsBeautify()<cr>
 map <leader>ffh :call HtmlBeautify()<cr>
 Bundle "jshint.vim"
-Bundle "jelera/vim-javascript-syntax"
 
 " Other Languages
 Bundle "kchmck/vim-coffee-script"
 let g:coffeeCheckHighlightErrorLine = 1
 Bundle "othree/coffee-check.vim"
-Bundle "Dart"
-Bundle "rainux/vim-vala"
 
 " clojure
 Bundle "VimClojure"
@@ -211,9 +206,6 @@ let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
 
 " Utility plugins
-
-" Multi edit sublime like support
-Bundle "terryma/vim-multiple-cursors"
 
 " Easy way to set marks on the page
 Bundle "wokmarks.vim"
@@ -236,11 +228,14 @@ endif
 Bundle "gmarik/vim-visual-star-search.git"
 Bundle "troydm/easybuffer.vim"
 Bundle "scrooloose/nerdtree"
+" move selection up/down
+let g:move_key_modifier = 'C-S'
+Bundle "matze/vim-move"
+Bundle "spolu/dwm.vim"
 
 " Visual
 
 " Colorschemes
-Bundle "nanotech/jellybeans.vim"
 Bundle "altercation/vim-colors-solarized.git"
 
 "Misc
@@ -291,9 +286,6 @@ if has('mac')
   imap <D-9> <M-9>
 endif
 
-"motion helpers
-Bundle "Lokaltog/vim-easymotion"
-
 " indent code properly
 Bundle "sickill/vim-pasta"
 
@@ -331,12 +323,20 @@ Bundle "sollidsnake/vterm"
 
 " pretty statusbar
 Bundle "bling/vim-airline"
+"Bundle "bigfish/vim-js-context-coloring"
+
+Bundle "AndrewRadev/switch.vim"
+let g:switch_custom_definitions =
+    \ [
+    \   ['none', 'block']
+    \ ]
+nnoremap - :Switch<cr>
 
 filetype plugin indent on
 
 if has('gui_running')
   set background=dark
-  colorscheme jellybeans
+  colorscheme solarized
 else
   colorscheme emacs
 endif
