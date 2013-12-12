@@ -116,7 +116,7 @@ if has('gui_running')
     set guioptions=cMg "console dialogs, do not show menu or toolbar
 
     if has('mac')
-        set guifont=Menlo\:h17
+        set guifont=Anonymous\ Pro\:h18
     elseif has('win32')
         set guifont=Consolas:h14:cRUSSIAN
     else
