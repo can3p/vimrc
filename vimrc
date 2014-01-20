@@ -15,6 +15,7 @@ set langmap=ё`йqцwуeкrеtнyгuшiщoзpх[ъ]фaыsвdаfпgрhоjлkдlж
 "not the original Bourne shell which very few use
 let g:is_posix = 1
 
+
 " leader keys
 let mapleader = ','
 let maplocalleader = '  ' " tab key
@@ -197,6 +198,7 @@ Bundle "jshint.vim"
 Bundle "kchmck/vim-coffee-script"
 let g:coffeeCheckHighlightErrorLine = 1
 Bundle "othree/coffee-check.vim"
+Bundle "leafgarland/typescript-vim"
 
 " clojure
 Bundle "VimClojure"
@@ -231,7 +233,7 @@ Bundle "scrooloose/nerdtree"
 " move selection up/down
 let g:move_key_modifier = 'C-S'
 Bundle "matze/vim-move"
-Bundle "spolu/dwm.vim"
+"Bundle "spolu/dwm.vim"
 
 " Visual
 
@@ -263,29 +265,6 @@ Bundle "Align"
 "internal functions to do fs work, Unlink, Move, Chmod, W etc.
 Bundle "tpope/vim-eunuch"
 
-" tabbar fix for mac
-if has('mac')
-  nmap <D-1> <M-1>
-  nmap <D-2> <M-2>
-  nmap <D-3> <M-3>
-  nmap <D-4> <M-4>
-  nmap <D-5> <M-5>
-  nmap <D-6> <M-6>
-  nmap <D-7> <M-7>
-  nmap <D-8> <M-8>
-  nmap <D-9> <M-9>
-
-  imap <D-1> <M-1>
-  imap <D-2> <M-2>
-  imap <D-3> <M-3>
-  imap <D-4> <M-4>
-  imap <D-5> <M-5>
-  imap <D-6> <M-6>
-  imap <D-7> <M-7>
-  imap <D-8> <M-8>
-  imap <D-9> <M-9>
-endif
-
 " indent code properly
 Bundle "sickill/vim-pasta"
 
@@ -306,7 +285,6 @@ let g:quickrun_config = {
 \}
 
 Bundle "thinca/vim-quickrun"
-Bundle "AndrewRadev/gapply.vim"
 Bundle "AndrewRadev/splitjoin.vim"
 
 nmap sj :SplitjoinSplit<cr>
@@ -323,7 +301,6 @@ Bundle "sollidsnake/vterm"
 
 " pretty statusbar
 Bundle "bling/vim-airline"
-"Bundle "bigfish/vim-js-context-coloring"
 
 Bundle "AndrewRadev/switch.vim"
 let g:switch_custom_definitions =
@@ -339,6 +316,8 @@ if has('gui_running')
   colorscheme solarized
 else
   colorscheme emacs
+  " this plugin works only in console vim
+  Bundle "bigfish/vim-js-context-coloring"
 endif
 
 " show manuals
