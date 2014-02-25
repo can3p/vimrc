@@ -262,8 +262,7 @@ let g:Grep_Xargs_Options = '-0'
 " trying ack
 Bundle "mileszs/ack.vim"
 Bundle "can3p/incbool.vim"
-"align lines (on equal signs) easily with <Leader>t=
-Bundle "Align"
+Bundle "tommcdo/vim-lion"
 "internal functions to do fs work, Unlink, Move, Chmod, W etc.
 Bundle "tpope/vim-eunuch"
 
