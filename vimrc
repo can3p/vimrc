@@ -193,6 +193,8 @@ Bundle "maksimr/vim-jsbeautify"
 map <leader>ffj :call JsBeautify()<cr>
 map <leader>ffh :call HtmlBeautify()<cr>
 Bundle "jshint.vim"
+Bundle "pangloss/vim-javascript"
+Bundle "mxw/vim-jsx"
 
 " Other Languages
 Bundle "kchmck/vim-coffee-script"
@@ -301,6 +303,7 @@ Bundle "sollidsnake/vterm"
 
 " pretty statusbar
 Bundle "bling/vim-airline"
+Bundle "tommcdo/vim-exchange"
 
 Bundle "AndrewRadev/switch.vim"
 let g:switch_custom_definitions =
@@ -316,8 +319,6 @@ if has('gui_running')
   colorscheme solarized
 else
   colorscheme emacs
-  " this plugin works only in console vim
-  Bundle "bigfish/vim-js-context-coloring"
 endif
 
 " show manuals
