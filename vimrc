@@ -303,6 +303,9 @@ Bundle "sollidsnake/vterm"
 " pretty statusbar
 Bundle "bling/vim-airline"
 Bundle "tommcdo/vim-exchange"
+" select text on enter
+Bundle "gcmt/wildfire.vim"
+Bundle "tpope/vim-unimpaired"
 
 Bundle "AndrewRadev/switch.vim"
 let g:switch_custom_definitions =
@@ -322,3 +325,8 @@ endif
 
 " show manuals
 runtime ftplugin/man.vim
+
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+"show todo items
+command Todo Ggrep! 'TODO'
