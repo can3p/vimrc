@@ -200,7 +200,6 @@ Bundle "mxw/vim-jsx"
 Bundle "kchmck/vim-coffee-script"
 let g:coffeeCheckHighlightErrorLine = 1
 Bundle "othree/coffee-check.vim"
-Bundle "leafgarland/typescript-vim"
 
 " clojure
 Bundle "VimClojure"
@@ -231,7 +230,6 @@ endif
 " Navigation
 Bundle "gmarik/vim-visual-star-search.git"
 Bundle "troydm/easybuffer.vim"
-Bundle "scrooloose/nerdtree"
 " move selection up/down
 let g:move_key_modifier = 'C-S'
 Bundle "matze/vim-move"
@@ -262,7 +260,7 @@ let g:Grep_Xargs_Options = '-0'
 " trying ack
 Bundle "mileszs/ack.vim"
 Bundle "can3p/incbool.vim"
-Bundle "tommcdo/vim-lion"
+Bundle "junegunn/vim-easy-align"
 "internal functions to do fs work, Unlink, Move, Chmod, W etc.
 Bundle "tpope/vim-eunuch"
 
@@ -270,6 +268,8 @@ Bundle "tpope/vim-eunuch"
 Bundle "sickill/vim-pasta"
 
 " highlight syntax errors
+" disable jshint checker for syntastic
+let g:loaded_syntastic_javascript_jshint_checker = 1
 Bundle "scrooloose/syntastic"
 
 "run files fast
@@ -291,14 +291,7 @@ Bundle "AndrewRadev/splitjoin.vim"
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
-Bundle "AndrewRadev/inline_edit.vim"
-
-let b:inline_edit_autowrite = 1
 Bundle "AndrewRadev/linediff.vim"
-
-Bundle "AndrewRadev/coffee_tools.vim"
-
-Bundle "sollidsnake/vterm"
 
 " pretty statusbar
 Bundle "bling/vim-airline"
@@ -306,13 +299,6 @@ Bundle "tommcdo/vim-exchange"
 " select text on enter
 Bundle "gcmt/wildfire.vim"
 Bundle "tpope/vim-unimpaired"
-
-Bundle "AndrewRadev/switch.vim"
-let g:switch_custom_definitions =
-    \ [
-    \   ['none', 'block']
-    \ ]
-nnoremap - :Switch<cr>
 
 filetype plugin indent on
 
