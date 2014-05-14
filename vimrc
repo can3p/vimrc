@@ -117,7 +117,7 @@ if has('gui_running')
     set guioptions=cMg "console dialogs, do not show menu or toolbar
 
     if has('mac')
-        set guifont=Anonymous\ Pro\:h18
+        set guifont=Anonymous\ Pro\:h22
     elseif has('win32')
         set guifont=Consolas:h14:cRUSSIAN
     else
@@ -181,6 +181,7 @@ Bundle "tpope/vim-haml"
 Bundle "digitaltoad/vim-jade"
 Bundle "Markdown"
 Bundle "edsono/vim-matchit"
+Bundle "artjock/vim-tmpl"
 
 " CSS
 Bundle "Better-CSS-Syntax-for-Vim"
