@@ -317,3 +317,26 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 "show todo items
 command Todo Ggrep! 'TODO'
+
+function! Log()
+  let stamp = system("date +%Y-%m-%d")
+  let time = system("date +%H:%M:%S")
+
+  let stamp = substitute(stamp, '\n$', '', '')
+  if !exists("g:log_dir")
+    let g:log_dir = "~/.log"
+  endif
+
+  let fname = g:log_dir . "/" . stamp . ".md"
+
+  let stars  = "*************************************"
+  let header = "Time: " . time
+  execute "edit " . fname
+  execute "normal! Go\r". stars . "\r"
+  execute "normal! i". header
+  execute "normal! i". stars . "\r\r"
+endfunction
+
+command Log call Log()
+
+let g:log_dir = "~/Dropbox/.log"
