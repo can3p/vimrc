@@ -235,6 +235,7 @@ Bundle "matze/vim-move"
 
 " Colorschemes
 Bundle "altercation/vim-colors-solarized.git"
+Bundle "jonathanfilip/vim-lucius"
 
 "Misc
 Bundle "L9"
@@ -300,11 +301,11 @@ Bundle "machakann/vim-textobj-delimited"
 
 filetype plugin indent on
 
+set background=dark
 if has('gui_running')
-  set background=dark
   colorscheme solarized
 else
-  colorscheme emacs
+  colorscheme lucius
 endif
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
