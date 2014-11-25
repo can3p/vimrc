@@ -117,7 +117,7 @@ if has('gui_running')
     set guioptions=cMg "console dialogs, do not show menu or toolbar
 
     if has('mac')
-        set guifont=Anonymous\ Pro\:h22
+        set guifont=Anonymous\ Pro\:h17
     elseif has('win32')
         set guifont=Consolas:h14:cRUSSIAN
     else
@@ -151,7 +151,7 @@ nmap <leader>k :bn!<CR>
 nmap <leader>j :bp!<CR>
 nmap <leader>- :Bdelete<CR>
 nmap <leader>e :NERDTree<CR>
-nmap + :EasyBufferToggle<CR>
+nmap + :CtrlPBuffer<CR>
 
 "replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
@@ -186,7 +186,6 @@ Bundle "artjock/vim-tmpl"
 " CSS
 Bundle "Better-CSS-Syntax-for-Vim"
 let g:cssColorVimDoNotMessMyUpdatetime = 1
-Bundle "groenewege/vim-less"
 Bundle "wavded/vim-stylus"
 
 " Javascript
@@ -197,17 +196,15 @@ Bundle "jshint.vim"
 Bundle "pangloss/vim-javascript"
 Bundle "mxw/vim-jsx"
 
+" Clojure
+Bundle "guns/vim-clojure-static"
+Bundle "tpope/vim-fireplace"
+
+
 " Other Languages
 Bundle "kchmck/vim-coffee-script"
 let g:coffeeCheckHighlightErrorLine = 1
 Bundle "othree/coffee-check.vim"
-
-" clojure
-Bundle "VimClojure"
-
-let g:vimclojure#WantNailgun = 1
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
 
 " Utility plugins
 
@@ -230,11 +227,9 @@ endif
 
 " Navigation
 Bundle "gmarik/vim-visual-star-search.git"
-Bundle "troydm/easybuffer.vim"
 " move selection up/down
 let g:move_key_modifier = 'C-S'
 Bundle "matze/vim-move"
-"Bundle "spolu/dwm.vim"
 
 " Visual
 
@@ -246,6 +241,7 @@ Bundle "L9"
 Bundle "kien/ctrlp.vim"
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_files = 0
 "let g:ctrlp_cmd = 'CtrlPBuffer'
 " close buffer while leaving windows in place
 Bundle "moll/vim-bbye"
@@ -300,6 +296,7 @@ Bundle "tommcdo/vim-exchange"
 " select text on enter
 Bundle "gcmt/wildfire.vim"
 Bundle "tpope/vim-unimpaired"
+Bundle "machakann/vim-textobj-delimited"
 
 filetype plugin indent on
 
@@ -309,9 +306,6 @@ if has('gui_running')
 else
   colorscheme emacs
 endif
-
-" show manuals
-runtime ftplugin/man.vim
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
