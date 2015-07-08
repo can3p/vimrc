@@ -18,7 +18,7 @@ let g:is_posix = 1
 
 " leader keys
 let mapleader = ','
-let maplocalleader = '  ' " tab key
+let maplocalleader = '.' " tab key
 
 if has('mac')
   set macmeta "command and alt keys should mean the same
@@ -205,6 +205,8 @@ Bundle "tpope/vim-fireplace"
 Bundle "kchmck/vim-coffee-script"
 let g:coffeeCheckHighlightErrorLine = 1
 Bundle "othree/coffee-check.vim"
+Bundle "rust-lang/rust.vim"
+Bundle "lambdatoast/elm.vim"
 
 " Utility plugins
 
