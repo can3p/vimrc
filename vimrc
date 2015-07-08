@@ -162,115 +162,117 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " use gg=G to indent html file
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
-set runtimepath+=~/.vim/vundle/
-call vundle#rc()
-
 filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 let g:vundle_default_git_proto = 'git' " use https for githubrepos
+
+Plugin 'gmarik/Vundle.vim'
 
 "Languages and libraries support
 
 " HTML/Markup
-Bundle "othree/html5-syntax.vim"
-Bundle "mattn/emmet-vim"
+Plugin 'othree/html5-syntax.vim'
+Plugin 'mattn/emmet-vim'
 let g:user_zen_settings = {
     \ 'indentation' : '    '
     \ }
 
-Bundle "tpope/vim-haml"
-Bundle "digitaltoad/vim-jade"
-Bundle "Markdown"
-Bundle "edsono/vim-matchit"
-Bundle "artjock/vim-tmpl"
+Plugin 'tpope/vim-haml'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'Markdown'
+Plugin 'edsono/vim-matchit'
+Plugin 'artjock/vim-tmpl'
 
 " CSS
-Bundle "Better-CSS-Syntax-for-Vim"
+Plugin 'Better-CSS-Syntax-for-Vim'
 let g:cssColorVimDoNotMessMyUpdatetime = 1
-Bundle "wavded/vim-stylus"
+Plugin 'wavded/vim-stylus'
 
 " Javascript
-Bundle "maksimr/vim-jsbeautify"
+Plugin 'maksimr/vim-jsbeautify'
 map <leader>ffj :call JsBeautify()<cr>
 map <leader>ffh :call HtmlBeautify()<cr>
-Bundle "jshint.vim"
-Bundle "pangloss/vim-javascript"
-Bundle "mxw/vim-jsx"
+Plugin 'jshint.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " Clojure
-Bundle "guns/vim-clojure-static"
-Bundle "tpope/vim-fireplace"
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
 
 
 " Other Languages
-Bundle "kchmck/vim-coffee-script"
+Plugin 'kchmck/vim-coffee-script'
 let g:coffeeCheckHighlightErrorLine = 1
-Bundle "othree/coffee-check.vim"
-Bundle "rust-lang/rust.vim"
-Bundle "lambdatoast/elm.vim"
+Plugin 'othree/coffee-check.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'lambdatoast/elm.vim'
 
 " Utility plugins
 
 " Easy way to set marks on the page
-Bundle "wokmarks.vim"
+Plugin 'wokmarks.vim'
 let g:wokmarks_do_maps=1
 
 " helps to repeat custom commands in vim
-Bundle "repeat.vim"
+Plugin 'repeat.vim'
 " change surround pair symbols - quotes/brakets etc
-Bundle "surround.vim"
+Plugin 'surround.vim'
 
-Bundle "scrooloose/nerdcommenter"
+Plugin 'scrooloose/nerdcommenter'
 " highlight indent levels
-Bundle "nathanaelkane/vim-indent-guides"
+Plugin 'nathanaelkane/vim-indent-guides'
 
 if has('gui_running')
   let g:indent_guides_enable_on_vim_startup=1
 endif
 
 " Navigation
-Bundle "gmarik/vim-visual-star-search.git"
+Plugin 'gmarik/vim-visual-star-search.git'
 " move selection up/down
 let g:move_key_modifier = 'C-S'
-Bundle "matze/vim-move"
+Plugin 'matze/vim-move'
 
 " Visual
 
 " Colorschemes
-Bundle "altercation/vim-colors-solarized.git"
-Bundle "jonathanfilip/vim-lucius"
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'jonathanfilip/vim-lucius'
 
 "Misc
-Bundle "L9"
-Bundle "kien/ctrlp.vim"
+Plugin 'L9'
+Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files = 0
 "let g:ctrlp_cmd = 'CtrlPBuffer'
 " close buffer while leaving windows in place
-Bundle "moll/vim-bbye"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-speeddating"
-Bundle "DataWraith/auto_mkdir"
-Bundle "jceb/vim-orgmode"
+Plugin 'moll/vim-bbye'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-speeddating'
+Plugin 'DataWraith/auto_mkdir'
+Plugin 'jceb/vim-orgmode'
 " configs per directory
-Bundle "embear/vim-localvimrc"
+Plugin 'embear/vim-localvimrc'
 "grep integration
 "without this option plugin fails on Max OS X
 let g:Grep_Xargs_Options = '-0'
 " trying ack
-Bundle "mileszs/ack.vim"
-Bundle "can3p/incbool.vim"
-Bundle "junegunn/vim-easy-align"
+Plugin 'mileszs/ack.vim'
+Plugin 'can3p/incbool.vim'
+Plugin 'junegunn/vim-easy-align'
 "internal functions to do fs work, Unlink, Move, Chmod, W etc.
-Bundle "tpope/vim-eunuch"
+Plugin 'tpope/vim-eunuch'
 
 " indent code properly
-Bundle "sickill/vim-pasta"
+Plugin 'sickill/vim-pasta'
 
 " highlight syntax errors
 " disable jshint checker for syntastic
 let g:loaded_syntastic_javascript_jshint_checker = 1
-Bundle "scrooloose/syntastic"
+Plugin 'scrooloose/syntastic'
 
 "run files fast
 let g:quickrun_config = {
@@ -285,22 +287,23 @@ let g:quickrun_config = {
 \  }
 \}
 
-Bundle "thinca/vim-quickrun"
-Bundle "AndrewRadev/splitjoin.vim"
+Plugin 'thinca/vim-quickrun'
+Plugin 'AndrewRadev/splitjoin.vim'
 
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
-Bundle "AndrewRadev/linediff.vim"
+Plugin 'AndrewRadev/linediff.vim'
 
 " pretty statusbar
-Bundle "bling/vim-airline"
-Bundle "tommcdo/vim-exchange"
+Plugin 'bling/vim-airline'
+Plugin 'tommcdo/vim-exchange'
 " select text on enter
-Bundle "gcmt/wildfire.vim"
-Bundle "tpope/vim-unimpaired"
-Bundle "machakann/vim-textobj-delimited"
+Plugin 'gcmt/wildfire.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'machakann/vim-textobj-delimited'
 
+call vundle#end()
 filetype plugin indent on
 
 set background=dark
