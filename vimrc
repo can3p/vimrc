@@ -182,7 +182,6 @@ let g:user_zen_settings = {
 Plugin 'tpope/vim-haml'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'Markdown'
-Plugin 'edsono/vim-matchit'
 Plugin 'artjock/vim-tmpl'
 
 " CSS
@@ -204,9 +203,6 @@ Plugin 'tpope/vim-fireplace'
 
 
 " Other Languages
-Plugin 'kchmck/vim-coffee-script'
-let g:coffeeCheckHighlightErrorLine = 1
-Plugin 'othree/coffee-check.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'lambdatoast/elm.vim'
 
@@ -274,19 +270,6 @@ Plugin 'sickill/vim-pasta'
 let g:loaded_syntastic_javascript_jshint_checker = 1
 Plugin 'scrooloose/syntastic'
 
-"run files fast
-let g:quickrun_config = {
-\  'coffee': {
-\    'command': 'coffee',
-\    'cmdopt': '-cbp',
-\    'tempfile': '%{tempname()}.coffee',
-\    'exec': '%c %a %o %s'
-\  },
-\  'coffee/run': {
-\    'command': 'coffee'
-\  }
-\}
-
 Plugin 'thinca/vim-quickrun'
 Plugin 'AndrewRadev/splitjoin.vim'
 
@@ -317,26 +300,3 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 "show todo items
 command Todo Ggrep! 'TODO'
-
-function! Log()
-  let stamp = system("date +%Y-%m-%d")
-  let time = system("date +%H:%M:%S")
-
-  let stamp = substitute(stamp, '\n$', '', '')
-  if !exists("g:log_dir")
-    let g:log_dir = "~/.log"
-  endif
-
-  let fname = g:log_dir . "/" . stamp . ".md"
-
-  let stars  = "*************************************"
-  let header = "Time: " . time
-  execute "edit " . fname
-  execute "normal! Go\r". stars . "\r"
-  execute "normal! i". header
-  execute "normal! i". stars . "\r\r"
-endfunction
-
-command Log call Log()
-
-let g:log_dir = "~/Dropbox/.log"
