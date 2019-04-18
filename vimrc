@@ -208,6 +208,9 @@ Plugin 'lambdatoast/elm.vim'
 
 " Utility plugins
 
+" Editorconfig support
+Plugin 'editorconfig/editorconfig-vim'
+
 " Easy way to set marks on the page
 Plugin 'wokmarks.vim'
 let g:wokmarks_do_maps=1
