@@ -180,14 +180,13 @@ let g:user_zen_settings = {
     \ }
 
 Plugin 'tpope/vim-haml'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'Markdown'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'artjock/vim-tmpl'
 
 " CSS
 Plugin 'Better-CSS-Syntax-for-Vim'
 let g:cssColorVimDoNotMessMyUpdatetime = 1
-Plugin 'wavded/vim-stylus'
 
 " Javascript
 Plugin 'maksimr/vim-jsbeautify'
@@ -204,7 +203,6 @@ Plugin 'tpope/vim-fireplace'
 
 " Other Languages
 Plugin 'rust-lang/rust.vim'
-Plugin 'lambdatoast/elm.vim'
 
 " Utility plugins
 
