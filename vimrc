@@ -269,6 +269,8 @@ Plugin 'sickill/vim-pasta'
 " highlight syntax errors
 " disable jshint checker for syntastic
 let g:loaded_syntastic_javascript_jshint_checker = 1
+" vim hangs on save otherwise, see https://stackoverflow.com/questions/29220361/writing-java-files-from-vim-hangs
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
 Plugin 'scrooloose/syntastic'
 
 Plugin 'thinca/vim-quickrun'
