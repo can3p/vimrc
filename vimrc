@@ -181,6 +181,8 @@ let g:user_zen_settings = {
 
 Plugin 'tpope/vim-haml'
 Plugin 'godlygeek/tabular'
+" disable annoying markdown folding - https://github.com/plasticboy/vim-markdown/issues/53
+let g:vim_markdown_folding_disabled=1
 Plugin 'plasticboy/vim-markdown'
 Plugin 'artjock/vim-tmpl'
 
