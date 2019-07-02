@@ -202,6 +202,12 @@ Plugin 'mxw/vim-jsx'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
 
+" Python
+
+Plugin 'hdima/python-syntax'
+
+let g:python_highlight_all = 1
+
 
 " Other Languages
 Plugin 'rust-lang/rust.vim'
@@ -273,6 +279,8 @@ Plugin 'sickill/vim-pasta'
 let g:loaded_syntastic_javascript_jshint_checker = 1
 " vim hangs on save otherwise, see https://stackoverflow.com/questions/29220361/writing-java-files-from-vim-hangs
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
+" check syntax for python 3 https://stackoverflow.com/questions/23177561/switch-python-version-for-vim-syntastic
+let g:syntastic_python_checkers = ['python3']
 Plugin 'scrooloose/syntastic'
 
 Plugin 'thinca/vim-quickrun'
