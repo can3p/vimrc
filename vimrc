@@ -216,10 +216,6 @@ Plugin 'rust-lang/rust.vim'
 " Editorconfig support
 Plugin 'editorconfig/editorconfig-vim'
 
-" Easy way to set marks on the page
-Plugin 'wokmarks.vim'
-let g:wokmarks_do_maps=1
-
 " helps to repeat custom commands in vim
 Plugin 'repeat.vim'
 " change surround pair symbols - quotes/brakets etc
