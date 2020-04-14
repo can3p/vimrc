@@ -262,9 +262,6 @@ Plugin 'AndrewRadev/linediff.vim'
 
 " pretty statusbar
 Plugin 'bling/vim-airline'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'machakann/vim-textobj-delimited'
 
 call vundle#end()
 filetype plugin indent on
