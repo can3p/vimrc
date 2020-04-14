@@ -252,10 +252,15 @@ Plugin 'junegunn/seoul256.vim'
 
 "Misc
 Plugin 'L9'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files = 0
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|node_modules)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 "let g:ctrlp_cmd = 'CtrlPBuffer'
 " close buffer while leaving windows in place
 Plugin 'moll/vim-bbye'
