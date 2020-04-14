@@ -287,7 +287,7 @@ Plugin 'sickill/vim-pasta'
 " disable jshint checker for syntastic
 let g:loaded_syntastic_javascript_jshint_checker = 1
 " vim hangs on save otherwise, see https://stackoverflow.com/questions/29220361/writing-java-files-from-vim-hangs
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java', 'rust'] }
 " check syntax for python 3 https://stackoverflow.com/questions/23177561/switch-python-version-for-vim-syntastic
 let g:syntastic_python_checkers = ['python3']
 Plugin 'scrooloose/syntastic'
