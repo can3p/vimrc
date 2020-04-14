@@ -204,7 +204,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " Navigation
 Plugin 'gmarik/vim-visual-star-search.git'
 " move selection up/down
-let g:move_key_modifier = 'C-S'
 Plugin 'matze/vim-move'
 
 " Keep cwd to the root of the repo
@@ -235,8 +234,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-speeddating'
 Plugin 'DataWraith/auto_mkdir'
 Plugin 'jceb/vim-orgmode'
-" configs per directory
-Plugin 'embear/vim-localvimrc'
 "grep integration
 "without this option plugin fails on Max OS X
 let g:Grep_Xargs_Options = '-0'
@@ -260,18 +257,12 @@ let g:syntastic_python_checkers = ['python3']
 Plugin 'scrooloose/syntastic'
 
 Plugin 'thinca/vim-quickrun'
-Plugin 'AndrewRadev/splitjoin.vim'
-
-nmap sj :SplitjoinSplit<cr>
-nmap sk :SplitjoinJoin<cr>
 
 Plugin 'AndrewRadev/linediff.vim'
 
 " pretty statusbar
 Plugin 'bling/vim-airline'
 Plugin 'tommcdo/vim-exchange'
-" select text on enter
-Plugin 'gcmt/wildfire.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'machakann/vim-textobj-delimited'
 
