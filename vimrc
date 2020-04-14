@@ -128,29 +128,11 @@ endif
 " File type settings
 " ==================
 
-au BufRead,BufNewFile *.bml set filetype=perl
-autocmd BufRead *.as set filetype=actionscript
-autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-autocmd BufNewFile,BufRead *Cakefile set filetype=coffee
-
-" Enable comment strings
-let vala_comment_strings = 1
-
-" Highlight space errors
-let vala_space_errors = 1
-" Disable space-tab-space errors
-let vala_no_tab_space_error = 1
-
 " Hot Keys
 " ========
 
 " buffer movement
-nmap <M-k> :bn!<CR>
-nmap <M-j> :bp!<CR>
-nmap <leader>k :bn!<CR>
-nmap <leader>j :bp!<CR>
 nmap <leader>- :Bdelete<CR>
-nmap <leader>e :NERDTree<CR>
 nmap + :CtrlPBuffer<CR>
 
 "replace selected text
@@ -197,16 +179,9 @@ Plugin 'jshint.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
-" Clojure
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-fireplace'
-
 " Python
-
-Plugin 'hdima/python-syntax'
-
 let g:python_highlight_all = 1
-
+Plugin 'hdima/python-syntax'
 
 " Other Languages
 Plugin 'rust-lang/rust.vim'
