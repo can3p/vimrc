@@ -240,6 +240,11 @@ Plugin 'gmarik/vim-visual-star-search.git'
 let g:move_key_modifier = 'C-S'
 Plugin 'matze/vim-move'
 
+" Keep cwd to the root of the repo
+let g:rooter_silent_chdir = 1
+let g:rooter_use_lcd = 1
+Plugin 'airblade/vim-rooter'
+
 " Visual
 
 " Colorschemes
