@@ -248,8 +248,7 @@ Plugin 'airblade/vim-rooter'
 " Visual
 
 " Colorschemes
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'jonathanfilip/vim-lucius'
+Plugin 'junegunn/seoul256.vim'
 
 "Misc
 Plugin 'L9'
@@ -308,11 +307,7 @@ call vundle#end()
 filetype plugin indent on
 
 set background=dark
-if has('gui_running')
-  colorscheme solarized
-else
-  colorscheme lucius
-endif
+colorscheme seoul256
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
