@@ -223,11 +223,8 @@ Plugin 'surround.vim'
 
 Plugin 'scrooloose/nerdcommenter'
 " highlight indent levels
+let g:indent_guides_enable_on_vim_startup=1
 Plugin 'nathanaelkane/vim-indent-guides'
-
-if has('gui_running')
-  let g:indent_guides_enable_on_vim_startup=1
-endif
 
 " Navigation
 Plugin 'gmarik/vim-visual-star-search.git'
