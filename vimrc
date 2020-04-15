@@ -154,6 +154,40 @@ Plugin 'gmarik/Vundle.vim'
 
 "Languages and libraries support
 
+" Go
+" Do: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.24.0
+" Do: go get golang.org/x/tools/cmd/goimports golang.org/x/tools/gopls
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_text_changed = 0
+let g:ale_linters_explicit = 1
+let g:ale_fixers = {
+      \   'go': ['goimports', 'gofmt'],
+      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ }
+let g:ale_linters = {
+      \   'go': ['gopls', 'golangci-lint'],
+      \ }
+let g:ale_type_map = {
+      \   'golangci-lint': {'ES': 'WS', 'E': 'W'},
+      \ }
+let g:ale_go_gofmt_options = '-s'
+let g:ale_lsp_show_message_severity = 'warning'
+let g:ale_sign_error = 'E'
+let g:ale_sign_warning = 'W'
+let g:ale_sign_info = 'I'
+let g:ale_set_highlights = 0
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+set completeopt=menu,menuone,noinsert,noselect
+Plugin 'dense-analysis/ale'
+
+autocmd FileType go nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType go nnoremap <silent> <buffer> K :ALEHover<CR>
+autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+
 " HTML/Markup
 Plugin 'othree/html5-syntax.vim'
 Plugin 'mattn/emmet-vim'
