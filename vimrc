@@ -136,6 +136,9 @@ endif
 nmap <leader>- :Bdelete<CR>
 nmap + :CtrlPBuffer<CR>
 
+" open a file in the same folder
+nnoremap <leader>e :e <C-R>=fnamemodify(@%, ':p:h')<CR>/
+
 "replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
