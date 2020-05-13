@@ -125,6 +125,11 @@ if has('gui_running')
     endif
 endif
 
+" lvimrc
+Plugin 'embear/vim-localvimrc'
+let g:localvimrc_persistent = 1
+
+
 " File type settings
 " ==================
 
