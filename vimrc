@@ -125,10 +125,6 @@ if has('gui_running')
     endif
 endif
 
-" lvimrc
-Plugin 'embear/vim-localvimrc'
-let g:localvimrc_persistent = 1
-
 
 " File type settings
 " ==================
@@ -156,6 +152,10 @@ call vundle#begin()
 let g:vundle_default_git_proto = 'git' " use https for githubrepos
 
 Plugin 'gmarik/Vundle.vim'
+
+" lvimrc
+Plugin 'embear/vim-localvimrc'
+let g:localvimrc_persistent = 1
 
 "Languages and libraries support
 
