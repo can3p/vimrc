@@ -182,6 +182,7 @@ let g:ale_fixers = {
       \ }
 let g:ale_linters = {
       \   'go': ['gopls', 'golangci-lint'],
+      \   'javascript': ['tsserver'],
       \ }
 let g:ale_type_map = {
       \   'golangci-lint': {'ES': 'WS', 'E': 'W'},
@@ -200,6 +201,7 @@ Plugin 'dense-analysis/ale'
 autocmd FileType go nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType go nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 
 
 " HTML/Markup
