@@ -125,6 +125,12 @@ if has('gui_running')
     endif
 endif
 
+" Avoid command-line redraw on every entered character by turning off Arabic
+" shaping (which is implemented poorly).
+if has('arabic')
+    set noarabicshape
+endif
+
 
 " File type settings
 " ==================
