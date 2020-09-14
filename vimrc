@@ -200,8 +200,12 @@ Plugin 'dense-analysis/ale'
 
 autocmd FileType go nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType go nnoremap <silent> <buffer> K :ALEHover<CR>
+autocmd FileType go nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
+autocmd FileType go nnoremap <silent> <buffer> <C-m> :ALENext<CR>
 autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType javascript nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
+autocmd FileType javascript nnoremap <silent> <buffer> <M-m> :ALENext<CR>
 
 
 " HTML/Markup
