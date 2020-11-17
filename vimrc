@@ -176,6 +176,7 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_linters_explicit = 1
+let g:ale_linter_aliases = {'typescript.tsx': 'typescript'}
 let g:ale_fixers = {
       \   'go': ['goimports', 'gofmt'],
       \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -183,6 +184,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
       \   'go': ['gopls', 'golangci-lint'],
       \   'javascript': ['tsserver'],
+      \   'typescript': ['tsserver'],
       \ }
 let g:ale_type_map = {
       \   'golangci-lint': {'ES': 'WS', 'E': 'W'},
@@ -207,6 +209,13 @@ autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<
 autocmd FileType javascript nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
 autocmd FileType javascript nnoremap <silent> <buffer> <M-m> :ALENext<CR>
 
+autocmd FileType typescript nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType typescript nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
+autocmd FileType typescript nnoremap <silent> <buffer> <M-m> :ALENext<CR>
+
+autocmd FileType typescript.tsx nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType typescript.tsx nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
+autocmd FileType typescript.tsx nnoremap <silent> <buffer> <M-m> :ALENext<CR>
 
 " HTML/Markup
 Plugin 'othree/html5-syntax.vim'
@@ -232,6 +241,12 @@ map <leader>ffh :call HtmlBeautify()<cr>
 Plugin 'jshint.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+
+" Typescript
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+" set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 " Python
 let g:python_highlight_all = 1
