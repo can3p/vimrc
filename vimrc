@@ -171,6 +171,10 @@ Plugin 'gmarik/Vundle.vim'
 " Go
 " Do: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.24.0
 " Do: go get golang.org/x/tools/cmd/goimports golang.org/x/tools/gopls
+"
+" Rust
+" curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+" rustup component add rls rust-analysis rust-src
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_insert_leave = 0
@@ -178,10 +182,12 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_linters_explicit = 1
 let g:ale_linter_aliases = {'typescript.tsx': 'typescript'}
 let g:ale_fixers = {
+      \   'rust': ['rustfmt'],
       \   'go': ['goimports', 'gofmt'],
       \   '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ }
 let g:ale_linters = {
+      \   'rust': ['rustc', 'rls'],
       \   'go': ['gopls', 'golangci-lint'],
       \   'javascript': ['tsserver'],
       \   'typescript': ['tsserver'],
@@ -199,6 +205,11 @@ let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 set completeopt=menu,menuone,noinsert,noselect
 Plugin 'dense-analysis/ale'
+
+autocmd FileType rust nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType rust nnoremap <silent> <buffer> K :ALEHover<CR>
+autocmd FileType rust nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
+autocmd FileType rust nnoremap <silent> <buffer> <C-m> :ALENext<CR>
 
 autocmd FileType go nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType go nnoremap <silent> <buffer> K :ALEHover<CR>
