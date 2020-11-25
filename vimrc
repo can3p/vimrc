@@ -341,6 +341,9 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'AndrewRadev/linediff.vim'
 
 " pretty statusbar
+" https://github.com/powerline/fonts
+" sudo dnf install powerline-fonts
+let g:airline_powerline_fonts = 1
 Plugin 'bling/vim-airline'
 
 call vundle#end()
