@@ -289,6 +289,7 @@ Plugin 'matze/vim-move'
 " Keep cwd to the root of the repo
 let g:rooter_silent_chdir = 1
 let g:rooter_cd_cmd="lcd"
+let g:rooter_patterns = ['.git']
 Plugin 'airblade/vim-rooter'
 
 " Visual
