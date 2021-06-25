@@ -174,7 +174,7 @@ Plugin 'gmarik/Vundle.vim'
 "
 " Rust
 " curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-" rustup component add rls rust-analysis rust-src
+" rustup component add rustfmt rls rust-analysis rust-src
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_insert_leave = 0
@@ -265,6 +265,7 @@ Plugin 'hdima/python-syntax'
 
 " Other Languages
 Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
 
 " Utility plugins
 
