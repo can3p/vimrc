@@ -171,10 +171,15 @@ Plugin 'gmarik/Vundle.vim'
 " Go
 " Do: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.24.0
 " Do: go get golang.org/x/tools/cmd/goimports golang.org/x/tools/gopls
+
 "
 " Rust
 " curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 " rustup component add rustfmt rls rust-analysis rust-src
+
+" Cpp:
+" Do: sudo apt install llvm ccls
+" In the project root: touch .ccls-root
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_insert_leave = 0
@@ -189,6 +194,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
       \   'rust': ['rustc', 'rls'],
       \   'go': ['gopls', 'golangci-lint'],
+      \   'cpp': ['ccls'],
       \   'javascript': ['tsserver'],
       \   'typescript': ['tsserver'],
       \ }
@@ -227,6 +233,11 @@ autocmd FileType typescript nnoremap <silent> <buffer> <M-m> :ALENext<CR>
 autocmd FileType typescript.tsx nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType typescript.tsx nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
 autocmd FileType typescript.tsx nnoremap <silent> <buffer> <M-m> :ALENext<CR>
+
+autocmd FileType cpp nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType cpp nnoremap <silent> <buffer> K :ALEHover<CR>
+autocmd FileType cpp nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
+autocmd FileType cpp nnoremap <silent> <buffer> <C-m> :ALENext<CR>
 
 " HTML/Markup
 Plugin 'othree/html5-syntax.vim'
@@ -306,7 +317,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files = 0
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|node_modules)$',
-  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'file': '\v\.(exe|so|dll|pdf|jpeg|gif)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 "let g:ctrlp_cmd = 'CtrlPBuffer'
