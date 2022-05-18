@@ -20,9 +20,9 @@ let g:is_posix = 1
 let mapleader = ','
 let maplocalleader = '.' " tab key
 
-if has('mac')
-  set macmeta "command and alt keys should mean the same
-endif
+"if has('mac')
+  "set macmeta "command and alt keys should mean the same
+"endif
 
 " history/undo settings
 set history=500
