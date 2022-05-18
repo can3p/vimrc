@@ -160,7 +160,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 let g:vundle_default_git_proto = 'git' " use https for githubrepos
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " lvimrc
 "Plugin 'embear/vim-localvimrc'
@@ -357,7 +357,7 @@ Plugin 'AndrewRadev/linediff.vim'
 " https://github.com/powerline/fonts
 " sudo dnf install powerline-fonts
 let g:airline_powerline_fonts = 1
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
