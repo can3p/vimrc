@@ -175,7 +175,9 @@ Plugin 'VundleVim/Vundle.vim'
 "
 " Rust
 " curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-" rustup component add rustfmt rls rust-analysis rust-src
+" rustup component add rustfmt rls rust-analysis rust-src rust-analyzer
+" curl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+" chmod +x ~/.local/bin/rust-analyzer
 
 " Cpp:
 " Do: sudo apt install llvm ccls
@@ -187,12 +189,12 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_linters_explicit = 1
 let g:ale_linter_aliases = {'typescript.tsx': 'typescript'}
 let g:ale_fixers = {
-      \   'rust': ['rustfmt'],
+      \   'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'],
       \   'go': ['goimports', 'gofmt'],
       \   '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ }
 let g:ale_linters = {
-      \   'rust': ['rustc', 'rls'],
+      \   'rust': ['analyzer'],
       \   'go': ['gopls', 'golangci-lint'],
       \   'cpp': ['ccls'],
       \   'javascript': ['tsserver'],
