@@ -158,7 +158,7 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-let g:vundle_default_git_proto = 'git' " use https for githubrepos
+let g:vundle_default_git_proto = 'https' " use https for githubrepos
 
 Plugin 'VundleVim/Vundle.vim'
 
