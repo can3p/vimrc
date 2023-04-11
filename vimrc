@@ -199,6 +199,7 @@ let g:ale_linters = {
       \   'cpp': ['ccls'],
       \   'javascript': ['tsserver'],
       \   'typescript': ['tsserver'],
+      \   'typescriptreact': ['tsserver'],
       \ }
 let g:ale_type_map = {
       \   'golangci-lint': {'ES': 'WS', 'E': 'W'},
@@ -225,16 +226,24 @@ autocmd FileType go nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
 autocmd FileType go nnoremap <silent> <buffer> <C-m> :ALENext<CR>
 autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType javascript nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType javascript nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
 autocmd FileType javascript nnoremap <silent> <buffer> <M-m> :ALENext<CR>
 
 autocmd FileType typescript nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType typescript nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType typescript nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
 autocmd FileType typescript nnoremap <silent> <buffer> <M-m> :ALENext<CR>
 
 autocmd FileType typescript.tsx nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType typescript.tsx nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType typescript.tsx nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
 autocmd FileType typescript.tsx nnoremap <silent> <buffer> <M-m> :ALENext<CR>
+
+autocmd FileType typescriptreact nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType typescriptreact nnoremap <silent> <buffer> K :ALEHover<CR>
+autocmd FileType typescriptreact nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
+autocmd FileType typescriptreact nnoremap <silent> <buffer> <M-m> :ALENext<CR>
 
 autocmd FileType cpp nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType cpp nnoremap <silent> <buffer> K :ALEHover<CR>
@@ -371,3 +380,22 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 "show todo items
 command Todo Ggrep! 'TODO'
+
+function! s:Camelize(range) abort
+  if a:range == 0
+    s#\(\%(\<\l\+\)\%(_\)\@=\)\|_\(\l\)#\u\1\2#g
+  else
+    s#\%V\(\%(\<\l\+\)\%(_\)\@=\)\|_\(\l\)\%V#\u\1\2#g
+  endif
+endfunction
+
+function! s:Snakeize(range) abort
+  if a:range == 0
+    s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g
+  else
+    s#\%V\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)\%V#\l\1_\l\2#g
+  endif
+endfunction
+
+command! -range CamelCase silent! call <SID>Camelize(<range>)
+command! -range SnakeCase silent! call <SID>Snakeize(<range>)
