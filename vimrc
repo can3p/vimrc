@@ -215,31 +215,38 @@ set omnifunc=ale#completion#OmniFunc
 set completeopt=menu,menuone,noinsert,noselect
 Plugin 'dense-analysis/ale'
 
+autocmd FileType rust nnoremap <silent> <buffer> <C-[> :ALEFindReferences<CR>
 autocmd FileType rust nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType rust nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType rust nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
 autocmd FileType rust nnoremap <silent> <buffer> <C-m> :ALENext<CR>
 
+autocmd FileType go nnoremap <silent> <buffer> <C-[> :ALEFindReferences<CR>
 autocmd FileType go nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType go nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType go nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
 autocmd FileType go nnoremap <silent> <buffer> <C-m> :ALENext<CR>
 autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+autocmd FileType javascript nnoremap <silent> <buffer> <C-[> :ALEFindReferences<CR>
 autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType javascript nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType javascript nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
 autocmd FileType javascript nnoremap <silent> <buffer> <M-m> :ALENext<CR>
 
+autocmd FileType typescript nnoremap <silent> <buffer> <C-[> :ALEFindReferences<CR>
 autocmd FileType typescript nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType typescript nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType typescript nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
 autocmd FileType typescript nnoremap <silent> <buffer> <M-m> :ALENext<CR>
 
+autocmd FileType typescript.tsx nnoremap <silent> <buffer> <C-[> :ALEFindReferences<CR>
 autocmd FileType typescript.tsx nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType typescript.tsx nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType typescript.tsx nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
 autocmd FileType typescript.tsx nnoremap <silent> <buffer> <M-m> :ALENext<CR>
 
+autocmd FileType typescriptreact nnoremap <silent> <buffer> <C-[> :ALEFindReferences<CR>
 autocmd FileType typescriptreact nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType typescriptreact nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType typescriptreact nnoremap <silent> <buffer> <M-n> :ALEPrevious<CR>
