@@ -257,6 +257,14 @@ autocmd FileType cpp nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType cpp nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
 autocmd FileType cpp nnoremap <silent> <buffer> <C-m> :ALENext<CR>
 
+" Quick search
+" brew install fzf
+Plugin 'junegunn/fzf'
+" brew install the_silver_searcher
+Plugin 'junegunn/fzf.vim'
+
+map <leader>, :Ag<cr>
+
 " HTML/Markup
 Plugin 'othree/html5-syntax.vim'
 Plugin 'mattn/emmet-vim'
