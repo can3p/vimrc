@@ -228,6 +228,13 @@ autocmd FileType go nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
 autocmd FileType go nnoremap <silent> <buffer> <C-m> :ALENext<CR>
 autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
+autocmd FileType svelte nnoremap <silent> <buffer> <C-\> :ALEFindReferences<CR>
+autocmd FileType svelte nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
+autocmd FileType svelte nnoremap <silent> <buffer> K :ALEHover<CR>
+autocmd FileType svelte nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
+autocmd FileType svelte nnoremap <silent> <buffer> <C-m> :ALENext<CR>
+autocmd Filetype svelte setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+
 autocmd FileType javascript nnoremap <silent> <buffer> <C-\> :ALEFindReferences<CR>
 autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
 autocmd FileType javascript nnoremap <silent> <buffer> K :ALEHover<CR>
@@ -291,11 +298,18 @@ Plugin 'jshint.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+
 " Typescript
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 " set filetypes as typescript.tsx
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+
+" svelte
+Plugin 'othree/html5.vim'
+Plugin 'evanleck/vim-svelte', {'branch': 'main'}
+
+let g:svelte_preprocessors = ['typescript']
 
 " Python
 let g:python_highlight_all = 1
