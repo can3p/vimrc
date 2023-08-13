@@ -169,8 +169,11 @@ Plugin 'VundleVim/Vundle.vim'
 "Languages and libraries support
 
 " Go
-" Do: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.53.3
-" Do: go get golang.org/x/tools/cmd/goimports golang.org/x/tools/gopls
+" Do: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.54.1
+" commands below should be run separately, otherwise you can get obscure
+" output and now binaries
+" Do: go install golang.org/x/tools/cmd/goimports@latest
+" Do: go install golang.org/x/tools/gopls@latest
 
 "
 " Rust
