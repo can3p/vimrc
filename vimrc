@@ -169,7 +169,7 @@ Plugin 'VundleVim/Vundle.vim'
 "Languages and libraries support
 
 " Go
-" Do: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.24.0
+" Do: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.53.3
 " Do: go get golang.org/x/tools/cmd/goimports golang.org/x/tools/gopls
 
 "
