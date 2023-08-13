@@ -1,62 +1,63 @@
-" General settings
-" ================
+vim9script
+# General settings
+# ================
 
-set nocompatible " vim mode
-set cursorline " highlight current line
+set nocompatible # vim mode
+set cursorline # highlight current line
 set ttyfast
 set encoding=utf-8
 set termencoding=utf-8
-let loaded_netrw = 1 "fuck netrw
-language C "use C locale to avoid localized warnings
+var loaded_netrw = 1 #fuck netrw
+language C #use C locale to avoid localized warnings
 
 set langmap=ё`йqцwуeкrеtнyгuшiщoзpх[ъ]фaыsвdаfпgрhоjлkдlж\\;э'яzчxсcмvиbтnьmб\\,ю.Ё~ЙQЦWУEКRЕTНYГUШIЩOЗPХ{Ъ}ФAЫSВDАFПGРHОJЛKДLЖ:Э\\"ЯZЧXСCМVИBТNЬMЮ>Б<
 
-"syntax highlight shell scripts as per POSIX,
-"not the original Bourne shell which very few use
-let g:is_posix = 1
+#syntax highlight shell scripts as per POSIX,
+#not the original Bourne shell which very few use
+g:is_posix = 1
 
 
-" leader keys
-let mapleader = ','
-let maplocalleader = '.' " tab key
+# leader keys
+var mapleader = ','
+var maplocalleader = '.' # tab key
 
-"if has('mac')
-  "set macmeta "command and alt keys should mean the same
-"endif
+#if has('mac')
+  #set macmeta #command and alt keys should mean the same
+#endif
 
-" history/undo settings
+# history/undo settings
 set history=500
 set timeoutlen=250
 set undolevels=100
 
-" respect modeline
+# respect modeline
 set modeline
-set modelines=5   " default numbers of lines to read for modeline instructions
+set modelines=5   # default numbers of lines to read for modeline instructions
 
-" backups and swap files
+# backups and swap files
 set nobackup
 set nowritebackup
-set directory=/tmp//           " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
+set directory=/tmp//           # prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
 set noswapfile
 set hidden
 
-" search settings
+# search settings
 set smartcase
 set ignorecase
 set incsearch
 set nohlsearch
 
-" Text editing options
-" ====================
+# Text editing options
+# ====================
 
-" swap settings
+# swap settings
 set nowrap
 set textwidth=0
 set sidescroll=5
 set sidescrolloff=5
 set listchars=extends:>,precedes:<
 
-" tab settings
+# tab settings
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -66,46 +67,46 @@ set smarttab
 
 set backspace=indent,eol,start
 
-" indent settings
+# indent settings
 set autoindent
-"set foldmethod=indent
+#set foldmethod=indent
 
 
-" Visual settings
-" ===============
+# Visual settings
+# ===============
 
 syntax on
 set mouse=a
 set mousehide
-set showmatch " show brackets matches
-set number " show line numbers
-set wildmode=longest,list     " At command line, complete longest common string, then list alternatives.
+set showmatch # show brackets matches
+set number # show line numbers
+set wildmode=longest,list     # At command line, complete longest common string, then list alternatives.
 
 set completeopt+=preview
 
-" disable window flashing
+# disable window flashing
 set noerrorbells
 set visualbell
 set t_vb=
 set hid
 
-" status line
-set laststatus=2              " always show status line.
-set shortmess=atI             " shortens messages
-set showcmd                   " display an incomplete command in statusline
+# status line
+set laststatus=2              # always show status line.
+set shortmess=atI             # shortens messages
+set showcmd                   # display an incomplete command in statusline
 
-set statusline=%<%f\          " custom statusline
-set stl+=[%{&ff}]             " show fileformat
+set statusline=%<%f\          # custom statusline
+set stl+=[%{&ff}]             # show fileformat
 set stl+=%y%m%r%=
 set stl+=%-14.(%l,%c%V%)\ %P
 
-" show tabs
+# show tabs
 set list
 set listchars=tab:>-
 set listchars+=trail:·
 set listchars+=extends:»,precedes:«
 
-"highlight unnecessary spaces
+#highlight unnecessary spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
@@ -114,7 +115,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 if has('gui_running')
-    set guioptions=cMg "console dialogs, do not show menu or toolbar
+    set guioptions=cMg #console dialogs, do not show menu or toolbar
 
     if has('mac')
         set guifont=Anonymous\ Pro\:h17
@@ -125,95 +126,95 @@ if has('gui_running')
     endif
 endif
 
-" Avoid command-line redraw on every entered character by turning off Arabic
-" shaping (which is implemented poorly).
+# Avoid command-line redraw on every entered character by turning off Arabic
+# shaping (which is implemented poorly).
 if has('arabic')
     set noarabicshape
 endif
 
 
-" File type settings
-" ==================
+# File type settings
+# ==================
 
-" Hot Keys
-" ========
+# Hot Keys
+# ========
 
-" buffer movement
+# buffer movement
 nmap <leader>- :Bdelete<CR>
 nmap + :CtrlPBuffer<CR>
 
-" open a file in the same folder
+# open a file in the same folder
 nnoremap <leader>e :e <C-R>=fnamemodify(@%, ':p:h')<CR>/
 
-"replace selected text
-vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
+#replace selected text
+vnoremap <C-r> #hy:%s/<C-r>h//g<left><left>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" use gg=G to indent html file
+# use gg=G to indent html file
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-let g:vundle_default_git_proto = 'https' " use https for githubrepos
+vundle#begin()
+g:vundle_default_git_proto = 'https' # use https for githubrepos
 
 Plugin 'VundleVim/Vundle.vim'
 
-" lvimrc
-"Plugin 'embear/vim-localvimrc'
-"let g:localvimrc_persistent = 1
+# lvimrc
+#Plugin 'embear/vim-localvimrc'
+#g:localvimrc_persistent = 1
 
-"Languages and libraries support
+#Languages and libraries support
 
-" Go
-" Do: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.54.1
-" commands below should be run separately, otherwise you can get obscure
-" output and now binaries
-" Do: go install golang.org/x/tools/cmd/goimports@latest
-" Do: go install golang.org/x/tools/gopls@latest
+# Go
+# Do: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.54.1
+# commands below should be run separately, otherwise you can get obscure
+# output and now binaries
+# Do: go install golang.org/x/tools/cmd/goimports@latest
+# Do: go install golang.org/x/tools/gopls@latest
 
-"
-" Rust
-" curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-" rustup component add rustfmt rls rust-analysis rust-src rust-analyzer
-" curl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
-" chmod +x ~/.local/bin/rust-analyzer
+#
+# Rust
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# rustup component add rustfmt rls rust-analysis rust-src rust-analyzer
+# curl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+# chmod +x ~/.local/bin/rust-analyzer
 
-" Cpp:
-" Do: sudo apt install llvm ccls
-" In the project root: touch .ccls-root
-let g:ale_fix_on_save = 1
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_text_changed = 0
-let g:ale_linters_explicit = 1
-let g:ale_linter_aliases = {'typescript.tsx': 'typescript'}
-let g:ale_fixers = {
-      \   'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'],
-      \   'go': ['goimports', 'gofmt'],
-      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ }
-let g:ale_linters = {
-      \   'rust': ['analyzer'],
-      \   'go': ['gopls', 'golangci-lint'],
-      \   'cpp': ['ccls'],
-      \   'javascript': ['tsserver'],
-      \   'typescript': ['tsserver'],
-      \   'typescriptreact': ['tsserver'],
-      \ }
-let g:ale_type_map = {
-      \   'golangci-lint': {'ES': 'WS', 'E': 'W'},
-      \ }
-let g:ale_go_gofmt_options = '-s'
-let g:ale_lsp_show_message_severity = 'warning'
-let g:ale_sign_error = 'E'
-let g:ale_sign_warning = 'W'
-let g:ale_sign_info = 'I'
-let g:ale_set_highlights = 0
-let g:ale_completion_enabled = 1
+# Cpp:
+# Do: sudo apt install llvm ccls
+# In the project root: touch .ccls-root
+g:ale_fix_on_save = 1
+g:ale_lint_on_save = 1
+g:ale_lint_on_insert_leave = 0
+g:ale_lint_on_text_changed = 0
+g:ale_linters_explicit = 1
+g:ale_linter_aliases = {'typescript.tsx': 'typescript'}
+g:ale_fixers = {
+         'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'],
+         'go': ['goimports', 'gofmt'],
+         '*': ['remove_trailing_lines', 'trim_whitespace'],
+       }
+g:ale_linters = {
+         'rust': ['analyzer'],
+         'go': ['gopls', 'golangci-lint'],
+         'cpp': ['ccls'],
+         'javascript': ['tsserver'],
+         'typescript': ['tsserver'],
+         'typescriptreact': ['tsserver'],
+       }
+g:ale_type_map = {
+         'golangci-lint': {'ES': 'WS', 'E': 'W'},
+       }
+g:ale_go_gofmt_options = '-s'
+g:ale_lsp_show_message_severity = 'warning'
+g:ale_sign_error = 'E'
+g:ale_sign_warning = 'W'
+g:ale_sign_info = 'I'
+g:ale_set_highlights = 0
+g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 set completeopt=menu,menuone,noinsert,noselect
 Plugin 'dense-analysis/ale'
@@ -268,32 +269,32 @@ autocmd FileType cpp nnoremap <silent> <buffer> K :ALEHover<CR>
 autocmd FileType cpp nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
 autocmd FileType cpp nnoremap <silent> <buffer> <C-m> :ALENext<CR>
 
-" Quick search
-" brew install fzf
+# Quick search
+# brew install fzf
 Plugin 'junegunn/fzf'
-" brew install the_silver_searcher
+# brew install the_silver_searcher
 Plugin 'junegunn/fzf.vim'
 
 map <leader>, :Ag<cr>
 
-" HTML/Markup
+# HTML/Markup
 Plugin 'othree/html5-syntax.vim'
 Plugin 'mattn/emmet-vim'
-let g:user_zen_settings = {
-    \ 'indentation' : '    '
-    \ }
+g:user_zen_settings = {
+     'indentation': '    '
+     }
 
 Plugin 'tpope/vim-haml'
 Plugin 'godlygeek/tabular'
-" disable annoying markdown folding - https://github.com/plasticboy/vim-markdown/issues/53
-let g:vim_markdown_folding_disabled=1
+# disable annoying markdown folding - https://github.com/plasticboy/vim-markdown/issues/53
+g:vim_markdown_folding_disabled = 1
 Plugin 'plasticboy/vim-markdown'
 
-" CSS
+# CSS
 Plugin 'Better-CSS-Syntax-for-Vim'
-let g:cssColorVimDoNotMessMyUpdatetime = 1
+g:cssColorVimDoNotMessMyUpdatetime = 1
 
-" Javascript
+# Javascript
 Plugin 'maksimr/vim-jsbeautify'
 map <leader>ffj :call JsBeautify()<cr>
 map <leader>ffh :call HtmlBeautify()<cr>
@@ -302,133 +303,114 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
 
-" Typescript
+# Typescript
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
-" set filetypes as typescript.tsx
+# set filetypes as typescript.tsx
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
-" svelte
+# svelte
 Plugin 'othree/html5.vim'
 Plugin 'evanleck/vim-svelte', {'branch': 'main'}
 
-let g:svelte_preprocessors = ['typescript']
+g:svelte_preprocessors = ['typescript']
 
-" Python
-let g:python_highlight_all = 1
+# Python
+g:python_highlight_all = 1
 Plugin 'hdima/python-syntax'
 
-" Other Languages
+# Other Languages
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
 
-" Utility plugins
+# Utility plugins
 
-" Editorconfig support
+# Editorconfig support
 Plugin 'editorconfig/editorconfig-vim'
 
-" helps to repeat custom commands in vim
+# helps to repeat custom commands in vim
 Plugin 'repeat.vim'
-" change surround pair symbols - quotes/brakets etc
+# change surround pair symbols - quotes/brakets etc
 Plugin 'surround.vim'
 
 Plugin 'scrooloose/nerdcommenter'
-" highlight indent levels
-let g:indent_guides_enable_on_vim_startup=1
+# highlight indent levels
+g:indent_guides_enable_on_vim_startup = 1
 Plugin 'nathanaelkane/vim-indent-guides'
 
-" Navigation
+# Navigation
 Plugin 'gmarik/vim-visual-star-search.git'
-" move selection up/down
+# move selection up/down
 Plugin 'matze/vim-move'
 
-" Keep cwd to the root of the repo
-let g:rooter_silent_chdir = 1
-let g:rooter_cd_cmd="lcd"
-let g:rooter_patterns = ['.git']
+# Keep cwd to the root of the repo
+g:rooter_silent_chdir = 1
+g:rooter_cd_cmd = "lcd"
+g:rooter_patterns = ['.git']
 Plugin 'airblade/vim-rooter'
 
-" Visual
+# Visual
 
-" Colorschemes
+# Colorschemes
 Plugin 'junegunn/seoul256.vim'
 
-"Misc
+#Misc
 Plugin 'L9'
 Plugin 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_map = '<leader>t'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_files = 0
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|node_modules)$',
-  \ 'file': '\v\.(exe|so|dll|pdf|jpeg|gif)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-"let g:ctrlp_cmd = 'CtrlPBuffer'
-" close buffer while leaving windows in place
+g:ctrlp_map = '<leader>t'
+g:ctrlp_cmd = 'CtrlP'
+g:ctrlp_max_files = 0
+g:ctrlp_custom_ignore = {
+   'dir':  '\v[\/](\.git|node_modules)$',
+   'file': '\v\.(exe|so|dll|pdf|jpeg|gif)$',
+   'link': 'some_bad_symbolic_links',
+   }
+#g:ctrlp_cmd = 'CtrlPBuffer'
+# close buffer while leaving windows in place
 Plugin 'moll/vim-bbye'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-speeddating'
 Plugin 'DataWraith/auto_mkdir'
 Plugin 'jceb/vim-orgmode'
-"grep integration
-"without this option plugin fails on Max OS X
-let g:Grep_Xargs_Options = '-0'
-" trying ack
+#grep integration
+#without this option plugin fails on Max OS X
+g:Grep_Xargs_Options = '-0'
+# trying ack
 Plugin 'mileszs/ack.vim'
 Plugin 'can3p/incbool.vim'
 Plugin 'junegunn/vim-easy-align'
-"internal functions to do fs work, Unlink, Move, Chmod, W etc.
+#internal functions to do fs work, Unlink, Move, Chmod, W etc.
 Plugin 'tpope/vim-eunuch'
 
-" indent code properly
+# indent code properly
 Plugin 'sickill/vim-pasta'
 
-" highlight syntax errors
-" disable jshint checker for syntastic
-let g:loaded_syntastic_javascript_jshint_checker = 1
-" vim hangs on save otherwise, see https://stackoverflow.com/questions/29220361/writing-java-files-from-vim-hangs
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java', 'rust'] }
-" check syntax for python 3 https://stackoverflow.com/questions/23177561/switch-python-version-for-vim-syntastic
-let g:syntastic_python_checkers = ['python3']
+# highlight syntax errors
+# disable jshint checker for syntastic
+g:loaded_syntastic_javascript_jshint_checker = 1
+# vim hangs on save otherwise, see https://stackoverflow.com/questions/29220361/writing-java-files-from-vim-hangs
+g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java', 'rust'] }
+# check syntax for python 3 https://stackoverflow.com/questions/23177561/switch-python-version-for-vim-syntastic
+g:syntastic_python_checkers = ['python3']
 Plugin 'scrooloose/syntastic'
 
 Plugin 'thinca/vim-quickrun'
 
 Plugin 'AndrewRadev/linediff.vim'
 
-" pretty statusbar
-" https://github.com/powerline/fonts
-" sudo dnf install powerline-fonts
-let g:airline_powerline_fonts = 1
+# pretty statusbar
+# https://github.com/powerline/fonts
+# sudo dnf install powerline-fonts
+g:airline_powerline_fonts = 1
 Plugin 'vim-airline/vim-airline'
 
-call vundle#end()
+vundle#end()
 filetype plugin indent on
 
-set background=dark
+# set background= dark
 colorscheme seoul256
 
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-"show todo items
+autocmd QuickFixCmdPost [^l]* ++nested cwindow
+autocmd QuickFixCmdPost    l* ++nested lwindow
+#show todo items
 command Todo Ggrep! 'TODO'
-
-function! s:Camelize(range) abort
-  if a:range == 0
-    s#\(\%(\<\l\+\)\%(_\)\@=\)\|_\(\l\)#\u\1\2#g
-  else
-    s#\%V\(\%(\<\l\+\)\%(_\)\@=\)\|_\(\l\)\%V#\u\1\2#g
-  endif
-endfunction
-
-function! s:Snakeize(range) abort
-  if a:range == 0
-    s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g
-  else
-    s#\%V\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)\%V#\l\1_\l\2#g
-  endif
-endfunction
-
-command! -range CamelCase silent! call <SID>Camelize(<range>)
-command! -range SnakeCase silent! call <SID>Snakeize(<range>)
