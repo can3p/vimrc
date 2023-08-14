@@ -199,6 +199,7 @@ g:ale_type_map = {
          'golangci-lint': {'ES': 'WS', 'E': 'W'},
        }
 g:ale_go_gofmt_options = '-s'
+g:ale_go_golangci_lint_package = 1
 g:ale_lsp_show_message_severity = 'warning'
 g:ale_sign_error = 'E'
 g:ale_sign_warning = 'W'
