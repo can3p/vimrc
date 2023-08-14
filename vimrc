@@ -136,7 +136,6 @@ endif
 
 # buffer movement
 nmap <leader>- :Bdelete<CR>
-nmap + :CtrlPBuffer<CR>
 
 # open a file in the same folder
 nnoremap <leader>e :e <C-R>=fnamemodify(@%, ':p:h')<CR>/
@@ -226,6 +225,8 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 map <leader>, :Ag<cr>
+map <leader>t :Files<cr>
+nmap + :Buffers<CR>
 
 # HTML/Markup
 Plug 'othree/html5-syntax.vim'
@@ -290,16 +291,6 @@ Plug 'airblade/vim-rooter'
 Plug 'junegunn/seoul256.vim'
 
 #Misc
-Plug 'ctrlpvim/ctrlp.vim'
-g:ctrlp_map = '<leader>t'
-g:ctrlp_cmd = 'CtrlP'
-g:ctrlp_max_files = 0
-g:ctrlp_custom_ignore = {
-   'dir':  '\v[\/](\.git|node_modules)$',
-   'file': '\v\.(exe|so|dll|pdf|jpeg|gif)$',
-   'link': 'some_bad_symbolic_links',
-   }
-#g:ctrlp_cmd = 'CtrlPBuffer'
 # close buffer while leaving windows in place
 Plug 'moll/vim-bbye'
 Plug 'tpope/vim-fugitive'
