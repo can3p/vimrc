@@ -210,11 +210,11 @@ set omnifunc=ale#completion#OmniFunc
 set completeopt=menu,menuone,noinsert,noselect
 Plug 'dense-analysis/ale'
 
-nnoremap <silent> <buffer> <C-\> :ALEFindReferences<CR>
-nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
-nnoremap <silent> <buffer> K :ALEHover<CR>
-nnoremap <silent> <buffer> <C-n> :ALEPrevious<CR>
-nnoremap <silent> <buffer> <C-m> :ALENext<CR>
+nmap <C-\> :ALEFindReferences<CR>
+nmap <C-]> :ALEGoToDefinition<CR>
+nmap K :ALEHover<CR>
+nmap <C-n> :ALEPrevious<CR>
+nmap <C-m> :ALENext<CR>
 
 autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype svelte setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
