@@ -279,11 +279,6 @@ map <leader>, :Ag<cr>
 
 # HTML/Markup
 Plugin 'othree/html5-syntax.vim'
-Plugin 'mattn/emmet-vim'
-g:user_zen_settings = {
-     'indentation': '    '
-     }
-
 Plugin 'tpope/vim-haml'
 Plugin 'godlygeek/tabular'
 # disable annoying markdown folding - https://github.com/plasticboy/vim-markdown/issues/53
@@ -298,7 +293,6 @@ g:cssColorVimDoNotMessMyUpdatetime = 1
 Plugin 'maksimr/vim-jsbeautify'
 map <leader>ffj :call JsBeautify()<cr>
 map <leader>ffh :call HtmlBeautify()<cr>
-Plugin 'jshint.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
@@ -325,9 +319,6 @@ Plugin 'cespare/vim-toml'
 
 # Utility plugins
 
-# Editorconfig support
-Plugin 'editorconfig/editorconfig-vim'
-
 # helps to repeat custom commands in vim
 Plugin 'repeat.vim'
 # change surround pair symbols - quotes/brakets etc
@@ -340,8 +331,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 # Navigation
 Plugin 'gmarik/vim-visual-star-search.git'
-# move selection up/down
-Plugin 'matze/vim-move'
 
 # Keep cwd to the root of the repo
 g:rooter_silent_chdir = 1
@@ -371,32 +360,17 @@ Plugin 'moll/vim-bbye'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-speeddating'
 Plugin 'DataWraith/auto_mkdir'
-Plugin 'jceb/vim-orgmode'
 #grep integration
 #without this option plugin fails on Max OS X
 g:Grep_Xargs_Options = '-0'
 # trying ack
 Plugin 'mileszs/ack.vim'
 Plugin 'can3p/incbool.vim'
-Plugin 'junegunn/vim-easy-align'
 #internal functions to do fs work, Unlink, Move, Chmod, W etc.
 Plugin 'tpope/vim-eunuch'
 
 # indent code properly
 Plugin 'sickill/vim-pasta'
-
-# highlight syntax errors
-# disable jshint checker for syntastic
-g:loaded_syntastic_javascript_jshint_checker = 1
-# vim hangs on save otherwise, see https://stackoverflow.com/questions/29220361/writing-java-files-from-vim-hangs
-g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java', 'rust'] }
-# check syntax for python 3 https://stackoverflow.com/questions/23177561/switch-python-version-for-vim-syntastic
-g:syntastic_python_checkers = ['python3']
-Plugin 'scrooloose/syntastic'
-
-Plugin 'thinca/vim-quickrun'
-
-Plugin 'AndrewRadev/linediff.vim'
 
 # pretty statusbar
 # https://github.com/powerline/fonts
