@@ -228,18 +228,11 @@ map <leader>, :Ag<cr>
 map <leader>t :Files<cr>
 nmap + :Buffers<CR>
 
-# HTML/Markup
-Plug 'othree/html5-syntax.vim'
-Plug 'tpope/vim-haml'
-Plug 'godlygeek/tabular'
 # disable annoying markdown folding - https://github.com/plasticboy/vim-markdown/issues/53
 g:vim_markdown_folding_disabled = 1
 Plug 'plasticboy/vim-markdown'
 
 # Javascript
-Plug 'maksimr/vim-jsbeautify'
-map <leader>ffj :call JsBeautify()<cr>
-map <leader>ffh :call HtmlBeautify()<cr>
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
@@ -256,10 +249,6 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 g:svelte_preprocessors = ['typescript']
 
-# Python
-g:python_highlight_all = 1
-Plug 'hdima/python-syntax'
-
 # Other Languages
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
@@ -275,9 +264,6 @@ Plug 'scrooloose/nerdcommenter'
 # highlight indent levels
 g:indent_guides_enable_on_vim_startup = 1
 Plug 'nathanaelkane/vim-indent-guides'
-
-# Navigation
-Plug 'gmarik/vim-visual-star-search.git'
 
 # Keep cwd to the root of the repo
 g:rooter_silent_chdir = 1
@@ -299,14 +285,10 @@ Plug 'DataWraith/auto_mkdir'
 #grep integration
 #without this option plugin fails on Max OS X
 g:Grep_Xargs_Options = '-0'
-# trying ack
-Plug 'mileszs/ack.vim'
+
 Plug 'can3p/incbool.vim'
 #internal functions to do fs work, Unlink, Move, Chmod, W etc.
 Plug 'tpope/vim-eunuch'
-
-# indent code properly
-Plug 'sickill/vim-pasta'
 
 # pretty statusbar
 # https://github.com/powerline/fonts
