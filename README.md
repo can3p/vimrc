@@ -1,5 +1,6 @@
 # Install
 
+0. Install silver searcher
 1. `ln -s ~/.vim/vimrc ~/.vimrc`
 2. `vim`
 
