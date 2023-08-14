@@ -18,12 +18,7 @@ g:is_posix = 1
 
 
 # leader keys
-var mapleader = ','
-var maplocalleader = '.' # tab key
-
-#if has('mac')
-  #set macmeta #command and alt keys should mean the same
-#endif
+g:mapleader = ","
 
 # history/undo settings
 set history=500
@@ -155,17 +150,13 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 # use gg=G to indent html file
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
-filetype off
+var plug_path = '~/.vim/autoload/plug.vim'
+if empty(glob(plug_path))
+  silent execute '!curl -fLo ' .. plug_path .. ' --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-vundle#begin()
-g:vundle_default_git_proto = 'https' # use https for githubrepos
-
-Plugin 'VundleVim/Vundle.vim'
-
-# lvimrc
-#Plugin 'embear/vim-localvimrc'
-#g:localvimrc_persistent = 1
+plug#begin('~/.vim/bundle')
 
 #Languages and libraries support
 
@@ -217,7 +208,7 @@ g:ale_set_highlights = 0
 g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 set completeopt=menu,menuone,noinsert,noselect
-Plugin 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 autocmd FileType rust nnoremap <silent> <buffer> <C-\> :ALEFindReferences<CR>
 autocmd FileType rust nnoremap <silent> <buffer> <C-]> :ALEGoToDefinition<CR>
@@ -271,81 +262,76 @@ autocmd FileType cpp nnoremap <silent> <buffer> <C-m> :ALENext<CR>
 
 # Quick search
 # brew install fzf
-Plugin 'junegunn/fzf'
+Plug 'junegunn/fzf'
 # brew install the_silver_searcher
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
 map <leader>, :Ag<cr>
 
 # HTML/Markup
-Plugin 'othree/html5-syntax.vim'
-Plugin 'tpope/vim-haml'
-Plugin 'godlygeek/tabular'
+Plug 'othree/html5-syntax.vim'
+Plug 'tpope/vim-haml'
+Plug 'godlygeek/tabular'
 # disable annoying markdown folding - https://github.com/plasticboy/vim-markdown/issues/53
 g:vim_markdown_folding_disabled = 1
-Plugin 'plasticboy/vim-markdown'
-
-# CSS
-Plugin 'Better-CSS-Syntax-for-Vim'
-g:cssColorVimDoNotMessMyUpdatetime = 1
+Plug 'plasticboy/vim-markdown'
 
 # Javascript
-Plugin 'maksimr/vim-jsbeautify'
+Plug 'maksimr/vim-jsbeautify'
 map <leader>ffj :call JsBeautify()<cr>
 map <leader>ffh :call HtmlBeautify()<cr>
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 
 # Typescript
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 # set filetypes as typescript.tsx
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 # svelte
-Plugin 'othree/html5.vim'
-Plugin 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'othree/html5.vim'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 g:svelte_preprocessors = ['typescript']
 
 # Python
 g:python_highlight_all = 1
-Plugin 'hdima/python-syntax'
+Plug 'hdima/python-syntax'
 
 # Other Languages
-Plugin 'rust-lang/rust.vim'
-Plugin 'cespare/vim-toml'
+Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
 
 # Utility plugins
 
 # helps to repeat custom commands in vim
-Plugin 'repeat.vim'
+Plug 'tpope/vim-repeat'
 # change surround pair symbols - quotes/brakets etc
-Plugin 'surround.vim'
+Plug 'tpope/vim-surround'
 
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 # highlight indent levels
 g:indent_guides_enable_on_vim_startup = 1
-Plugin 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 
 # Navigation
-Plugin 'gmarik/vim-visual-star-search.git'
+Plug 'gmarik/vim-visual-star-search.git'
 
 # Keep cwd to the root of the repo
 g:rooter_silent_chdir = 1
 g:rooter_cd_cmd = "lcd"
 g:rooter_patterns = ['.git']
-Plugin 'airblade/vim-rooter'
+Plug 'airblade/vim-rooter'
 
 # Visual
 
 # Colorschemes
-Plugin 'junegunn/seoul256.vim'
+Plug 'junegunn/seoul256.vim'
 
 #Misc
-Plugin 'L9'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 g:ctrlp_map = '<leader>t'
 g:ctrlp_cmd = 'CtrlP'
 g:ctrlp_max_files = 0
@@ -356,35 +342,29 @@ g:ctrlp_custom_ignore = {
    }
 #g:ctrlp_cmd = 'CtrlPBuffer'
 # close buffer while leaving windows in place
-Plugin 'moll/vim-bbye'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-speeddating'
-Plugin 'DataWraith/auto_mkdir'
+Plug 'moll/vim-bbye'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-speeddating'
+Plug 'DataWraith/auto_mkdir'
 #grep integration
 #without this option plugin fails on Max OS X
 g:Grep_Xargs_Options = '-0'
 # trying ack
-Plugin 'mileszs/ack.vim'
-Plugin 'can3p/incbool.vim'
+Plug 'mileszs/ack.vim'
+Plug 'can3p/incbool.vim'
 #internal functions to do fs work, Unlink, Move, Chmod, W etc.
-Plugin 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 
 # indent code properly
-Plugin 'sickill/vim-pasta'
+Plug 'sickill/vim-pasta'
 
 # pretty statusbar
 # https://github.com/powerline/fonts
 # sudo dnf install powerline-fonts
 g:airline_powerline_fonts = 1
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 
-vundle#end()
-filetype plugin indent on
+plug#end()
 
 # set background= dark
 colorscheme seoul256
-
-autocmd QuickFixCmdPost [^l]* ++nested cwindow
-autocmd QuickFixCmdPost    l* ++nested lwindow
-#show todo items
-command Todo Ggrep! 'TODO'
