@@ -141,7 +141,7 @@ nmap <leader>- :Bdelete<CR>
 nnoremap <leader>e :e <C-R>=fnamemodify(@%, ':p:h')<CR>/
 
 #replace selected text
-vnoremap <C-r> #hy:%s/<C-r>h//g<left><left>
+vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
