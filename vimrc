@@ -180,20 +180,11 @@ g:ale_fix_on_save = 1
 g:ale_lint_on_save = 1
 g:ale_lint_on_insert_leave = 0
 g:ale_lint_on_text_changed = 0
-g:ale_linters_explicit = 1
 g:ale_linter_aliases = {'typescript.tsx': 'typescript'}
 g:ale_fixers = {
          'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'],
          'go': ['goimports', 'gofmt'],
          '*': ['remove_trailing_lines', 'trim_whitespace'],
-       }
-g:ale_linters = {
-         'rust': ['analyzer'],
-         'go': ['gopls', 'golangci-lint'],
-         'cpp': ['ccls'],
-         'javascript': ['tsserver'],
-         'typescript': ['tsserver'],
-         'typescriptreact': ['tsserver', 'svelteserver'],
        }
 g:ale_type_map = {
          'golangci-lint': {'ES': 'WS', 'E': 'W'},
