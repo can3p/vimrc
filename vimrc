@@ -210,6 +210,11 @@ nmap <C-m> :ALENext<CR>
 autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype svelte setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
+# defence against vim-svelte which enforces a different set of linters
+# otherwise
+autocmd BufNewFile,BufRead *.svelte b:ale_linter_aliases = ['svelte']
+autocmd BufNewFile,BufRead *.svelte b:ale_linters = ['svelteserver']
+
 # Quick search
 # brew install fzf
 Plug 'junegunn/fzf'
