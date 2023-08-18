@@ -193,7 +193,7 @@ g:ale_linters = {
          'cpp': ['ccls'],
          'javascript': ['tsserver'],
          'typescript': ['tsserver'],
-         'typescriptreact': ['tsserver'],
+         'typescriptreact': ['tsserver', 'svelteserver'],
        }
 g:ale_type_map = {
          'golangci-lint': {'ES': 'WS', 'E': 'W'},
@@ -290,6 +290,9 @@ g:Grep_Xargs_Options = '-0'
 Plug 'can3p/incbool.vim'
 #internal functions to do fs work, Unlink, Move, Chmod, W etc.
 Plug 'tpope/vim-eunuch'
+
+# search and replace that keeps the register and can do other wonders
+Plug 'tpope/vim-abolish'
 
 # pretty statusbar
 # https://github.com/powerline/fonts
