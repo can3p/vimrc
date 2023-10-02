@@ -296,6 +296,25 @@ Plug 'tpope/vim-abolish'
 g:airline_powerline_fonts = 1
 Plug 'vim-airline/vim-airline'
 
+Plug 'junegunn/goyo.vim'
+
+def GoyoEnter()
+  nnoremap j gj
+  nnoremap k gk
+  set wrap linebreak nolist
+enddef
+
+def GoyoLeave()
+  nnoremap gj j
+  nnoremap gk k
+  set nowrap
+enddef
+
+autocmd! User GoyoEnter call GoyoEnter()
+autocmd! User GoyoLeave call GoyoLeave()
+
+map <leader>g :Goyo<cr>
+
 plug#end()
 
 # set background= dark
