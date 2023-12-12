@@ -159,6 +159,11 @@ endif
 
 plug#begin('~/.vim/bundle')
 
+# Clipboard support in wayland, install wl-clipboard first
+if !has('mac')
+    Plug 'jasonccox/vim-wayland-clipboard'
+endif
+
 #Languages and libraries support
 
 # Go
