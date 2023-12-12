@@ -8,6 +8,8 @@ set ttyfast
 set encoding=utf-8
 set termencoding=utf-8
 var loaded_netrw = 1 #fuck netrw
+g:netrw_dirhistmax = 0 # for real
+
 language C #use C locale to avoid localized warnings
 
 set langmap=ё`йqцwуeкrеtнyгuшiщoзpх[ъ]фaыsвdаfпgрhоjлkдlж\\;э'яzчxсcмvиbтnьmб\\,ю.Ё~ЙQЦWУEКRЕTНYГUШIЩOЗPХ{Ъ}ФAЫSВDАFПGРHОJЛKДLЖ:Э\\"ЯZЧXСCМVИBТNЬMЮ>Б<
